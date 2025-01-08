@@ -1,0 +1,83 @@
+@use './variables' as *;
+
+@mixin tablet {
+   @media screen and (min-width: 700px){
+    @content;
+   }
+   
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1280px) {
+      @content;
+    }
+}
+
+@mixin flex-center($direction){
+  display: flex;
+  flex-direction: $direction;
+}
+@mixin logo {
+  font-size: 2rem;
+  text-decoration: none;
+  color: $black-color;
+  padding: 1rem;
+}
+
+@mixin body-font-mob {
+  font-size: 0.75rem;
+  line-height: 15px;
+  font-weight: 500; 
+  font-family: 'Lexend';
+}
+@mixin body-font-tab {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+
+}
+
+@mixin title-font-mob {
+  font-size: 1.625rem;
+  line-height: 38px;
+  font-weight: 300; 
+  font-family: 'Lexend';
+}
+
+@mixin title-font-tab {
+  font-size: 3.25rem;
+  line-height: 66px;
+}
+@mixin heading-font-mob {
+  font-size: 1.125rem;
+  line-height: 23px;
+  font-weight: 500;
+
+}
+@mixin heading-font-tab {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-weight: 500;
+
+}
+@mixin tags-font-mob{
+  font-size: 1rem;
+  font-family: 'Lexend';
+  font-weight: 500;
+}
+@mixin body-padding-mob{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@mixin body-padding-tab{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@mixin body-padding-desk{
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+@mixin gallery-border{
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}

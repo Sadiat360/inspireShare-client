@@ -1,0 +1,26 @@
+@use './variables' as *;
+
+  @font-face {
+    font-family: 'lexend-light';
+    src: url(../../assets/fonts/Lexend-Light.ttf) format("tff");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Lexend-Regular';
+    src: url(../../assets/fonts/Lexend-Regular.ttf) format("tff");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: 'Lexend-Medium';
+    src: url(../../assets/fonts/Lexend-Medium.ttf) format("tff");
+    font-weight: 500;
+    
+  }
+ 
+  @font-face {
+    font-family: 'Lexend-Bold';
+    src: url(../../assets/fonts/Lexend-Bold.ttf) format("tff");
+    font-weight: 700;
+    
+  }
