@@ -18,10 +18,15 @@
   flex-direction: $direction;
 }
 @mixin logo {
+  width: 80px;
+  text-decoration: none;
+  padding: 1rem;
+}
+@mixin logo-text {
   font-size: 2rem;
   text-decoration: none;
-  color: $black-color;
   padding: 1rem;
+  color: $secondary-color;
 }
 
 @mixin body-font-mob {

@@ -1,0 +1,56 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.music{
+    width: 100%;
+    padding: 1rem;
+    ////15px ---0.938
+    
+    @include tablet{
+        @include flex-center(row);
+    }
+   
+
+    &__box{
+
+        @include tablet{
+            width: 50%;
+        }
+       
+    }
+    &__image-container{
+        border-radius: 0.938rem;
+        margin-top: 1rem;
+
+        @include tablet{
+            width: 45%;
+        }
+      
+       
+    }
+    &__image{
+        width: 100%;
+        border-radius: 0.938rem;
+    }
+    &__title{
+        color: $inspireBlack-color;
+        padding-bottom: 1rem;
+        @include heading-font-mob;
+        font-weight: 700;
+
+        @include tablet{
+            @include heading-font-tab;
+            font-weight: 700;
+        }
+    }
+    &__text{
+        color: $inspireBlack-color;
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-tab;
+        }
+    }
+}

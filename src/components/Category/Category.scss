@@ -1,0 +1,37 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.category{
+    width: 100%;
+    padding: 1rem;
+
+    &__container{
+        @include flex-center(column);
+
+        @include tablet{
+            width: 100%;
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+    }
+    &__box{
+        @include flex-center(row);
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid $primary-color;
+        border-radius: 15px;
+        height: 100px;
+        margin-top: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        @include tablet{
+            width: 45%;
+        }
+    }
+    &__image{
+        width: 40px;
+    }
+}
