@@ -4,6 +4,8 @@ import HomePage from './pages/HomePage/HomePage.jsx';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import StressCategoryPage from './pages/StressCategoryPage/StressCategoryPage.jsx';
 import LoveCategoryPage from './pages/LoveCategoryPage/LoveCategoryPage.jsx'
+import CategoryForm from './components/CategoryForm/CategoryForm.jsx';
+import CardPage from './pages/CardPage/CardPage.jsx'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
       <Route path='/HomePage' element={<HomePage/>}/>
       <Route path='/StressCategoryPage' element={< StressCategoryPage/>}/>
       <Route path='/LoveCategoryPage' element={< LoveCategoryPage/>}/>
+      <Route path='/CardPage' element={< CardPage/>}/>
+      <Route path='/CategoryForm' element={< CategoryForm/>}/>
 
      </Routes>
      

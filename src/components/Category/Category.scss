@@ -31,7 +31,34 @@
             width: 45%;
         }
     }
+    &__frame{
+        @include flex-center(row);
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
     &__image{
         width: 40px;
+    }
+    &__start{
+        @include body-font-mob;
+        @include tablet{
+            @include body-font-tab;
+        }
+       
+    }
+    &__btn{
+        width: 150px;
+        padding: 5px 20px 5px 20px;
+        background-color: $secondary-color;
+        border: 2px solid $primary-color;
+        border-radius: 0.938rem;
+
+        &:hover{
+            background-color: $primary-color;
+            color: $secondary-color;
+        }
     }
 }
