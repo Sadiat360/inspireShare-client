@@ -9,7 +9,7 @@ function StressCategory({photo}){
                 <p className='music__text'>{photo.description}</p>
             </div>
             <div className='music__image-container'>
-                <img  className='music__image'src={photo.photo} alt="image" />
+                <img  className='music__image'src={`http://localhost:7000/images/${photo.photo}`} alt="image" />
             </div>
         </section>
     )
