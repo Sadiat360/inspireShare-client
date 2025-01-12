@@ -1,0 +1,23 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.faq__header{
+    width: 100%;
+    padding: 1rem;
+    @include flex-center(row);
+    background-color: $secondary-color;
+    @include box-shadow;
+
+    @include tablet{
+
+    }
+
+  
+}
+.faq__header .header__question{
+    @include heading-font-mob;
+    font-weight: 600;
+   
+}

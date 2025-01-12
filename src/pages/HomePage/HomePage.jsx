@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import Category from '../../components/Category/Category';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
+import FAQ from '../../components/FAQ/FAQ';
 
 
 function HomePage(){
@@ -39,6 +40,7 @@ function HomePage(){
         )}
       </section>
       <Category /> {/* Your other component */}
+      <FAQ />
     
         </>
        

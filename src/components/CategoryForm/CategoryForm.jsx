@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import YouTube from 'react-youtube';
 import './categoryForm.scss'
+import axios from 'axios';
 
 function categoryForm() {
-
+    const [stressQuote, setStressQuote] = useState([]);
     const[preview, setPreview] = useState(null);
     const [formData, setFormData] = useState({
         image: null,
@@ -97,8 +98,19 @@ function categoryForm() {
         const matches = url.match(regex);
         return matches && matches[1];
     };
+    useEffect(()=>{
+        async function getStressQuote() {
+            const response = await axios.get('http://localhost:7000/stressQuote');
+            console.log('This is stress quote:', response.data)
+            setStressQuote( response.data)
+            
+        }
+        getStressQuote();
+    
+    
+    }, []);
 
-
+   
 
 
 
@@ -160,11 +172,15 @@ function categoryForm() {
                </div>
                <div className="curate__quote">
                    <label  className="curate__form-label">Quote:</label>
-                   <textarea
+                   <select
                        name="quote"
                        value={formData.quote}
                        onChange={handleInputChange}
-                   ></textarea>
+                   >
+                   {stressQuote.map((stress) =>
+                      <option key={stress.id} value={stress.message}>{stress.title}</option>
+                   )} 
+                   </select>
                </div>
                  <button type="submit" disabled={!!error}>Submit
                     

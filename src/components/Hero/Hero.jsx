@@ -20,17 +20,23 @@ function Hero({slides}){
     return(
 
              
-            <div className='hero__container'>
-                <img src={`http://localhost:7000/images/${currentHero.photo}`} alt="image" />
-                <div>
-                   <h1>{currentHero.title}</h1>
-                   <p>{currentHero.subtitle}</p>
-               </div>
-                <img src={`http://localhost:7000/images/${nextHero.photo}`} alt="image" />
-                <div>
-                   <h1>{nextHero.title}</h1>
-                   <p>{nextHero.subtitle}</p>
-               </div>
+            <div className='hero__slide-container'>
+                <div className='hero__slide current-slide'>
+                  <img className='hero__image' src={`http://localhost:7000/images/${currentHero.photo}`} alt="image" />
+                  <div className='hero__text-box'>
+                     <h1 className='hero__title'>{currentHero.title}</h1>
+                     <p className='hero__sub'>{currentHero.subtitle}</p>
+                  </div>
+                </div>
+                <div  className='hero__slide next-slide'> 
+                    <img  className='hero__image' src={`http://localhost:7000/images/${nextHero.photo}`} alt="image" />
+                    <div className='hero__text-box'>
+                       <h1 className='hero__title'>{nextHero.title}</h1>
+                       <p className='hero__sub'>{nextHero.subtitle}</p>
+                   </div>
+
+                </div>
+               
 
             </div>
         

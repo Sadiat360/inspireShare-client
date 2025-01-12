@@ -1,0 +1,33 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.faq{
+    width: 100%;
+    padding: 1rem;
+    // background-color: bisque;
+    @include tablet{
+        padding: 2rem;
+        @include flex-center(row);
+    }
+
+    &__box{
+        @include tablet{
+            width: 50%;
+        }
+       
+    }
+    &__image-container{
+        width: 100%;
+        padding: 1rem;
+        @include tablet{
+            width: 50%;
+        }
+    }
+    &__image{
+        width: 100%;
+    }
+   
+   
+}
