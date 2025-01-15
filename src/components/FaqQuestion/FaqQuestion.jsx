@@ -14,17 +14,25 @@ function FaqQuestion({faqQuestion}){
     return(
             <>
              <div className="faq__header" onClick={handleToggleAnswer}>
-                   <DropdownArrow isOpen={isOpenAnswer}/>
-                    <h4 className='faq__header header__question'>{faqQuestion.question}</h4>
+                  <div className='faq__wrap'>
+                    <DropdownArrow isOpen={isOpenAnswer}/>
+                  
+                       <h4 className='faq__question'>{faqQuestion.question}</h4>
                     
+                    
+                    
+                  </div>
+                  
+
+                      {isOpenAnswer === true ? (
+                    <div className='faq__answer' >
+                       <p>{faqQuestion.answer}</p>
+                   </div>
+              ): null}
+          
              </div>
 
-            {isOpenAnswer === true ? (
-             <div>
-                     <p>{faqQuestion.answer}</p>
-                 </div>
-            ): null}
-          
+           
             </>
     )
 }

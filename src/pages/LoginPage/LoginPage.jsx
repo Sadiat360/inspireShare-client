@@ -2,7 +2,10 @@ import { useState } from "react";
 import { emailRegex } from "../../../lib/emailRegex/emailRgex";
 import { passwordRegex } from "../../../lib/passwordRegex/passwordRegex";
 import { useNavigate } from "react-router-dom";
+import signUpData from '../../assets/images/signUp-image.png'
+import { Link } from "react-router-dom";
 import axios from 'axios'
+import './LoginPage.scss'
 
 function LoginPage(){
     const [successMessage,setSuccessMessage] = useState(false)
@@ -54,7 +57,7 @@ function LoginPage(){
             password: formData.password
         });
         console.log('login response:', response.data);
-        localStorage.setItem('authToken', data.authToken);
+        localStorage.setItem('authToken', response.data.authToken);
 
         setErrorMessage('');
         setSuccessMessage("Signup successful! Redirecting to Home Page...");
@@ -67,34 +70,38 @@ function LoginPage(){
 
     }
     return(
-        <section className="logIn cla">
+        <section className="logIn">
             <div className="logIn__container">
-                <div className="logIn__image">
-                    <img src="/image" alt="log in image" />
+                <div className="logIn__image-wrap">
+                    <img  className="signUp__image" src={signUpData} alt="log in image" />
                 </div>
                 <form onSubmit={handleOnSubmit} className="logIn__form" action="">
 
                     <p>Log In</p>
                     {successMessage && <div className="logIn__success">{successMessage}</div>}
                     <div className="logIn__form-box">
-                        <label htmlFor="email">Email</label>
-                        <input type="text" 
-                        name="email" 
-                        id="email" 
-                        placeholder="please enter your email"
-                        onChange={(event) =>handleInputChange(event)}/> 
+                        <label  className="logIn__label" htmlFor="email">Email</label>
+                        <input className="logIn__input" type="text" 
+                          name="email" 
+                          id="email" 
+                          placeholder="please enter your email"
+                          onChange={(event) =>handleInputChange(event)}/> 
                          {errorMessage.email && <span className="signUp__text">{errorMessage.email}</span>}
                     </div> 
                     <div className="logIn__form-box">
-                        <label htmlFor="email">Password</label>
-                        <input type="password" 
+                        <label className="logIn__label" htmlFor="email">Password</label>
+                        <input  className="logIn__input"
+                         type="password" 
                         name="password" 
                         id="password" 
                         placeholder="please enter your password"
                         onChange={(event) =>handleInputChange(event)}/>
                          {errorMessage.password && <span className="signUp__text">{errorMessage.password}</span>}
                     </div>
-                    <button>LogIn</button>
+                    <button className="logIn__btn">LogIn</button>
+                    <u className="logIn__list">
+                     <p>Don't have an account?</p><Link to='/'><span>Create an account</span></Link>
+                    </u> 
                 </form>
             </div>
         </section>

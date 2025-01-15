@@ -1,0 +1,94 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.signUp{
+    width: 100%;
+    padding: 1rem;
+    padding-top: 5rem;
+
+    @include tablet{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    &__container{
+        width: 90%;
+        background-color: $secondary-color;
+        @include box-shadow;
+        @include tablet{
+            @include flex-center(row);
+            width: 70%;
+            margin: 0 auto;
+          
+        }
+       
+    }
+    &__image-wrap{
+        position: relative;
+        @include tablet{
+            width: 50%;
+        }
+    }
+    &__image{
+        width: 100%;
+    }
+    &__content-box{
+        position: absolute;
+        bottom: 25px;
+        padding: 1rem;
+    }
+    &__content{
+        @include heading-font-mob;
+        color: $secondary-color;
+        font-weight: 500;
+    }
+    &__caption{
+        @extend .signUp__content;
+        font-weight: 700;
+    }
+    &__form{
+        background-color: $secondary-color;
+        @include box-shadow;
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+    &__form-box{
+        @include flex-center(column);
+    }
+    &__label{
+        padding-bottom: 0.25rem;
+        padding-top: 0.5rem;
+        @include body-font-mob;
+        font-weight: 500;
+    }
+    &__input{
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 2px solid $primary-color;
+       @include body-font-mob;
+    }
+    &__txt{
+        @include body-font-mob;
+        padding-bottom: 1rem;
+    }
+    &__list{
+        @include flex-center(row);
+        text-decoration: none;
+        @include body-font-mob;
+    }
+
+    &__btn{
+        width: 100%;
+        padding: 10px 15px 10px 15px;
+        background-color: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $primary-color;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+}

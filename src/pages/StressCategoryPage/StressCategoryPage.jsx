@@ -30,7 +30,7 @@ function StressCategoryPage(props){
          {photoDetails?.map((photo)=>{
             return (<StressCategory key ={photo.id} photo={photo}/>)
          })}
-          <div className='category__frame'>
+          <div className='category'>
             <p className='category__start'>Lets start curating with Kindness</p>
            <Link to='/CategoryForm'><button className='category__btn'>Start</button></Link> 
           </div>

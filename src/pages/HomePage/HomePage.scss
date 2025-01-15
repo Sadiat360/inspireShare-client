@@ -9,6 +9,10 @@
     position: relative;
     overflow: hidden;
 
+    @include tablet{
+        height: 100vh;
+    }
+
     &__slide-container{
        width: 200%;
     //    padding: 1rem;
@@ -63,3 +67,24 @@
   .hero__slide.next-slide {
     opacity: 0; /* Next slide is hidden until active */
   }
+
+ .react-multi-carousel-list{
+    // background-color: red;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    // @include desktop{
+    //     @include flex-center(row);
+    //     justify-content: space-between;
+    // }
+   
+
+ }
+//  .react-multi-carousel-item{
+//     @include desktop{
+//         width: 500px;
+//         margin-left: 1rem;
+//     }
+//  }

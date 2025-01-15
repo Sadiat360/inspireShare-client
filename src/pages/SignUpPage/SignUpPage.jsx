@@ -3,7 +3,11 @@ import { emailRegex } from "../../../lib/emailRegex/emailRgex.js";
 import { nameRegex } from "../../../lib/nameRegex/nameRgex.js";
 import { passwordRegex } from "../../../lib/passwordRegex/passwordRegex.js";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import signUpData from '../../assets/images/signUp-image.png'
 import axios from 'axios'
+import './SignUpPage.scss'
+
 
 
 function SignUpPage(){
@@ -80,8 +84,13 @@ function SignUpPage(){
     return(
         <section className="signUp">
             <div className="signUp__container">
-                <div>
-                    <img src="/image" alt="welcome image" />
+                <div className="signUp__image-wrap">
+                    <img className="signUp__image" src={signUpData} alt="welcome image" />
+                    <article className="signUp__content-box">
+                        <p className="signUp__content">Kindness is a powerful force that can brighten someone's day, uplift spirits, and create a ripple effect of positivity in the world</p>
+                        <h3 className="signUp__caption">Remember to inspire someone today</h3>
+                    </article>
+                   
                 </div>
 
                 <form onSubmit={handleOnSubmit}className="signUp__form">
@@ -89,31 +98,35 @@ function SignUpPage(){
                     {successMessage && <div className="signUp__success">{successMessage}</div>}
 
                     <div className="signUp__form-box">
-                      <label htmlFor="name">Name</label>
-                      <input type="text" 
+                      <label className="signUp__label" htmlFor="name">Name</label>
+                      <input className="signUp__input" type="text" 
                              name='name'
-                             placeholder="Please enter your name"
+                             placeholder="Enter your name"
                              onChange={(event) => handleInputChange(event)}/>
                              {errorMessage.name && <span className="signUp__text">{errorMessage.name}</span>}
                     </div>
                     <div className="signUp__form-box">
-                      <label htmlFor="email">Email</label>
-                      <input type="text" 
+                      <label className="signUp__label" htmlFor="email">Email</label>
+                      <input className="signUp__input" type="text" 
                              name='email'
-                             placeholder="Please enter your email"
+                             placeholder="Enter your email"
                              onChange={(event) => handleInputChange(event)}/>
                              {errorMessage.email && <span className="signUp__text">{errorMessage.email}</span>}
                     </div>
                     <div className="signUp__form-box">
-                      <label htmlFor="email">Password</label>
-                      <input type="text" 
+                      <label className="signUp__label" htmlFor="email">Password</label>
+                      <input className="signUp__input" type="text" 
                              name='password'
-                             placeholder="Please enter your unique password"
+                             placeholder="Enter your unique password"
                              onChange={(event) => handleInputChange(event)}/>
+                             <p className="signUp__txt">Must be at least 8 characters</p>
                              {errorMessage.password && <span className="signUp__text">{errorMessage.password}</span>}
                     </div>
                 
-                <button>SignUp</button>
+                   <button className="signUp__btn">Create  account</button>
+                  <u className="signUp__list">
+                  <p>Already have an account?</p><Link to='/login'><span>Log In</span></Link>
+                 </u> 
                </form>
             </div>
            

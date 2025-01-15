@@ -5,19 +5,25 @@
 
 .faq__header{
     width: 100%;
+    // height: 8rem;
     padding: 1rem;
-    @include flex-center(row);
     background-color: $secondary-color;
     @include box-shadow;
-
-    @include tablet{
-
-    }
-
+    margin-bottom: 1rem;
   
 }
-.faq__header .header__question{
+.faq__wrap{
+    width: 100%;
+    @include flex-center(row);
+    margin-top: 1rem;
+    // justify-content: space-between;
+  }
+.faq__answer{
+    padding: 1rem;
+  }
+.faq__question{
     @include heading-font-mob;
     font-weight: 600;
+    
    
 }
