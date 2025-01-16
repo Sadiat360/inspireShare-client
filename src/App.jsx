@@ -9,6 +9,7 @@ import CardPage from './pages/CardPage/CardPage.jsx'
 import SignUpPage from './pages/SignUpPage/SignUpPage.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import StreakTrackPage from './pages/StreakTrackPage/StreakTrackPage.jsx';
+import { StreakProvider } from './StreakContext/StreakContext.jsx';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     <>
      <BrowserRouter>
      <Header/>
+     <StreakProvider>
      <Routes>
       <Route path='/' element={<SignUpPage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
@@ -26,8 +28,9 @@ function App() {
       <Route path='/CardPage' element={< CardPage/>}/>
       <Route path='/CategoryForm' element={< CategoryForm/>}/>
       <Route path='/StreakTrackPage' element={< StreakTrackPage/>}/>
-
      </Routes>
+     </StreakProvider>
+      
      
      </BrowserRouter>
     </>

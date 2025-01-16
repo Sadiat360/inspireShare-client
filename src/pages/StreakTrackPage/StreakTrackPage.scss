@@ -1,0 +1,55 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.streak{
+    width: 100%;
+    padding: 1rem;
+    
+   &__container{
+      height: 50%;
+      padding-bottom: 5rem;
+      padding: 1rem;
+      background-color: $secondary-color;
+      @include box-shadow;
+
+      @include tablet{
+        width: 80%;
+        margin: 0 auto;
+      }
+   }
+
+    &__image-wrap{
+        width: 90%;
+        margin: 0 auto;
+        
+        @include tablet{
+            width: 70%;
+        }
+       
+    }
+    &__image{
+        width: 100%;
+    }
+    &__text{
+        text-align: center;
+    }
+    &__box{
+        @include flex-center(row);
+        align-items: center;
+       
+    }
+    &__fire{
+        width: 20px;
+        animation: bounce 1s infinite ease-in-out;
+    }
+}
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); /* Default position */
+    }
+    50% {
+      transform: translateY(-20px); /* Move upward */
+    }
+  }

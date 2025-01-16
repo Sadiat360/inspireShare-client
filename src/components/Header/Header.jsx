@@ -12,7 +12,8 @@ function Header(){
          </div>
          <nav className='header__nav'>
             <ul className='header__list'>
-               <li className='header__item'>Home</li>
+               <Link to='/HomePage'><li className='header__item'>Home</li></Link> 
+               <Link to='/StreakTrackPage'><li className='header__item'>Streaks</li></Link> 
             </ul>
            
          </nav>

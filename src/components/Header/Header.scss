@@ -22,4 +22,18 @@
             @include logo-text;
         }
     }
+    &__nav{
+        width: 10%;
+        padding-right: 1rem;
+    }
+    &__list{
+        text-decoration: none;
+        @include flex-center(row);
+        justify-content: space-between;
+    }
+    &__item{
+        list-style: none;
+        color: $secondary-color;
+        cursor: pointer;
+    }
 }

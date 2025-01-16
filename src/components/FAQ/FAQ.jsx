@@ -29,8 +29,7 @@ function FAQ(){
             </div>
             <div className='faq__image-container'>
                 <img className='faq__image' src={couchData} alt="couch image" />
-               <div className='faq__rec-img'>
-                 <img className='faq__rec' src={recData} alt="image" />
+               <div className='faq__empty'>
                 </div> 
             </div>
 

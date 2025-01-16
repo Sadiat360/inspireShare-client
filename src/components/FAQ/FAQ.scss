@@ -37,20 +37,18 @@
        
     }
     
-   &__rec-img{
-       width: 100%;
-       position: absolute;
-       top: 5rem;
-       left: -5rem;
+//    &__empty{
+//        width: 100%;
+//        position: absolute;
+//        top: 5rem;
+//        left: -5rem;
+//        background-color: red;
+//        border: 2px solid $primary-color;
      
 
-     @include tablet{
-        width: 90%;
+//      @include tablet{
+//         width: 90%;
         
-     }
-   }
-   &__rec{
-    width: 100%;
-   }
-   
+//      }
+//    }  
 }

@@ -7,20 +7,19 @@ import './CardPage.scss'
 import PlayIcon from "../../components/PlayIcon/PlayIcon";
 import MailIcon from "../../components/MailIcon/MailIcon";
 import clickOne from '../../assets/icons/click1.png'
- 
+import { useStreak } from "../../StreakContext/StreakContext";
 import axios from 'axios';
-// const jwt_decode = require('jwt-decode');
+
 
 
 
 function CardPage(){
     // const [streaks, setStreaks] = useState([]);
     const navigate = useNavigate();
-    const [userData, setUserData] = useState([]);
     const [error, setError] = useState([]);
-    
     const [formData, setFormData] = useState(null);
     console.log(formData);
+    const {incrementStreak} = useStreak();
 
 
 
@@ -40,63 +39,13 @@ function CardPage(){
         )
     }
 
-    // const somePayload =formData;
 
-   
-        async function getUserData() {
-            const authToken =localStorage.getItem('authToken');
-            console.log('what authToken:', authToken)
-            
-            try{
-                const response = await axios.get(
-                    `${import.meta.env.VITE_API_BASE_URL}/users/profile`,
-                    {
-                        headers: {
-                            Authorisation: `Bearer ${authToken}`,
-                        },
-                    }
-                );
-                console.log('what is userdata:', response.data)
 
-                setUserData(response.data.authToken);
-            }catch (error){
-                 if (error.status === 401){
-                    setError('You must be logged in to view this page')
-                 }
-            }
-            
-        } 
-        getUserData();
-        // useEffect(()=>{
-           
-        // }, [])
-
-        // async function postStreak(){
-        //      const userId = getUserData();
-        //      if(!userId){
-        //         console.error('User not authorized');
-        //         return;
-        //      }
-
-        //     const token =localStorage.getItem('authToken')
-        //     try{
-        //         const response = await axios.post(`http://localhost:7000/streaks/profile/${userId}`,
-        //             {data: somePayload},
-        //             {headers: {Authorization: `Bearer ${token}`}}
-        //         );
-        //         console.log('streak response:', response.data);
-        //         setStreaks(response.data)
-        //     }catch(error){
-        //         console.error('Error posting streak:', error)
-        //     }
-           
-        // }
-        // postStreak();
-       
-  
     const {image, musicLink, quote} = formData;
     const handleDownloadPDF = () => {
-      
+        incrementStreak();
+        console.log('Streak incremented');
+        
         const element = document.querySelector('.card__container');
 
         html2canvas(element,{ scale: 2}).then((canvas) =>{
@@ -109,20 +58,21 @@ function CardPage(){
 
             pdf.addImage(imgData, 'PNG',0,0, imgWidth,imgHeight);
 
-               // Fetch music link from formData
-        const musicLink = formData?.musicLink;
-
-        // Add clickable music link
-        if (musicLink) {
-            pdf.textWithLink('Click to listen to the music', 10, imgHeight + 10, {
-                url: musicLink,
-            });
-        }
-
-            pdf.save("styled_card.pdf");
-        });
-     
-      
+                   // Fetch music link from formData
+            const musicLink = formData?.musicLink;
+    
+            // Add clickable music link
+            if (musicLink) {
+                pdf.textWithLink('Click to listen to the music', 10, imgHeight + 10, {
+                    url: musicLink,
+                });
+            }
+    
+                pdf.save("styled_card.pdf");
+         });
+        
+        // alert('Your card has been downloaded successfully!');
+        
     }
     return(
         <>
@@ -176,6 +126,7 @@ function CardPage(){
               <button  className="card__btn" onClick={handleDownloadPDF}>Download</button>
             </div>
 
+           
           
          
 

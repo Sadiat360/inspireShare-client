@@ -14,7 +14,7 @@ function HomePage(){
 
     const responsive = {
       superLargeDesktop: {
-        // the naming can be any, depends on you.
+       
         breakpoint: { max: 4000, min: 3000 },
         items: 5
       },
@@ -23,11 +23,11 @@ function HomePage(){
         items: 3
       },
       tablet: {
-        breakpoint: { max: 1024, min: 464 },
+        breakpoint: { max: 1024, min: 700},
         items: 2
       },
       mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: { max: 700, min: 0 },
         items: 1
       }
     };
@@ -63,7 +63,7 @@ function HomePage(){
         <>
         
         <section className='hero'>
-           {/* Only render Hero if heroSlides has data */}
+          
         {heroSlides.length > 0 ? (
           <Hero slides={heroSlides} />
         ) : (
