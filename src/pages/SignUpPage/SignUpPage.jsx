@@ -119,8 +119,9 @@ function SignUpPage(){
                              name='password'
                              placeholder="Enter your unique password"
                              onChange={(event) => handleInputChange(event)}/>
+                               {errorMessage.password && <span className="signUp__text">{errorMessage.password}</span>}
                              <p className="signUp__txt">Must be at least 8 characters</p>
-                             {errorMessage.password && <span className="signUp__text">{errorMessage.password}</span>}
+                           
                     </div>
                 
                    <button className="signUp__btn">Create  account</button>

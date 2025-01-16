@@ -80,7 +80,7 @@ function HomePage(){
              })}
 
       </Carousel> 
-
+     
       </section> 
      
      {/* /* Your other component */}

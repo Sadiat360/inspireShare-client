@@ -10,6 +10,7 @@
     @include tablet{
         padding: 2rem;
         @include flex-center(row);
+        justify-content: space-between;
     }
 
     &__box{
@@ -21,13 +22,35 @@
     &__image-container{
         width: 100%;
         padding: 1rem;
+        // background-color: red;
+        position: relative;
+        // bottom: -8%;
+        right: -3%;
+       
         @include tablet{
-            width: 50%;
+            width: 45%;
         }
     }
     &__image{
         width: 100%;
+       
+       
     }
-   
+    
+   &__rec-img{
+       width: 100%;
+       position: absolute;
+       top: 5rem;
+       left: -5rem;
+     
+
+     @include tablet{
+        width: 90%;
+        
+     }
+   }
+   &__rec{
+    width: 100%;
+   }
    
 }

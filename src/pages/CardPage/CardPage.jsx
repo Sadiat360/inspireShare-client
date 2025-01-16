@@ -6,15 +6,26 @@ import muiscBar from '../../assets/images/musicBar.png'
 import './CardPage.scss'
 import PlayIcon from "../../components/PlayIcon/PlayIcon";
 import MailIcon from "../../components/MailIcon/MailIcon";
+import clickOne from '../../assets/icons/click1.png'
+ 
+import axios from 'axios';
+// const jwt_decode = require('jwt-decode');
+
 
 
 function CardPage(){
-   const navigate = useNavigate();
+    // const [streaks, setStreaks] = useState([]);
+    const navigate = useNavigate();
+    const [userData, setUserData] = useState([]);
+    const [error, setError] = useState([]);
+    
     const [formData, setFormData] = useState(null);
     console.log(formData);
 
+
+
     useEffect(() =>{
-          const savedData = localStorage.getItem('formData'); /// i used loclal storage to get form data inputs beacsue it was stored locally when users clikc submit 
+          const savedData = localStorage.getItem('formData'); /// i used loclal storage to get form data inputs beacsue it was stored locally when users click submit 
           if(savedData){
             setFormData(JSON.parse(savedData));
           }
@@ -29,10 +40,63 @@ function CardPage(){
         )
     }
 
-    const {image, musicLink, quote} = formData;
+    // const somePayload =formData;
 
+   
+        async function getUserData() {
+            const authToken =localStorage.getItem('authToken');
+            console.log('what authToken:', authToken)
+            
+            try{
+                const response = await axios.get(
+                    `${import.meta.env.VITE_API_BASE_URL}/users/profile`,
+                    {
+                        headers: {
+                            Authorisation: `Bearer ${authToken}`,
+                        },
+                    }
+                );
+                console.log('what is userdata:', response.data)
+
+                setUserData(response.data.authToken);
+            }catch (error){
+                 if (error.status === 401){
+                    setError('You must be logged in to view this page')
+                 }
+            }
+            
+        } 
+        getUserData();
+        // useEffect(()=>{
+           
+        // }, [])
+
+        // async function postStreak(){
+        //      const userId = getUserData();
+        //      if(!userId){
+        //         console.error('User not authorized');
+        //         return;
+        //      }
+
+        //     const token =localStorage.getItem('authToken')
+        //     try{
+        //         const response = await axios.post(`http://localhost:7000/streaks/profile/${userId}`,
+        //             {data: somePayload},
+        //             {headers: {Authorization: `Bearer ${token}`}}
+        //         );
+        //         console.log('streak response:', response.data);
+        //         setStreaks(response.data)
+        //     }catch(error){
+        //         console.error('Error posting streak:', error)
+        //     }
+           
+        // }
+        // postStreak();
+       
+  
+    const {image, musicLink, quote} = formData;
     const handleDownloadPDF = () => {
-        // const doc = new jsPDF();
+      
         const element = document.querySelector('.card__container');
 
         html2canvas(element,{ scale: 2}).then((canvas) =>{
@@ -56,40 +120,17 @@ function CardPage(){
         }
 
             pdf.save("styled_card.pdf");
-        })
-
-    //     const musicLink = localStorage.getItem("formData")
-    //     ? JSON.parse(localStorage.getItem("formData")).musicLink
-    //     : null;
-
-    //     if (musicLink) {
-    //       pdf.textWithLink("Click to listen to the music", 10, imgHeight + 10, {
-    //         url: musicLink,
-    //     });
-    // }
-
-
-    //     doc.text('Quote:', 10,10);
-    //     doc.text(quote, 10, 20);
-
-    //     doc.text('Music Link:', 10,30);
-    //     doc.text(musicLink,10,40);
-
-    //     const img = new Image();
-    //     img.src = image;
-    //     img.onload = () => {
-    //         doc.addImage(img, 'JPEG', 10,50,100,160);
-
-    //         doc.save('card.pdf');
-    //     };
+        });
+     
+      
     }
     return(
         <>
         <section className="card">
             <h2>Why caring for others is important?</h2>
           <p className="card__title">Caring for others is essential for building stronger communities, promoting emotional well-being, and fostering personal growth. Acts of kindness create bonds of trust and support, leading to a sense of belonging and happiness for both the giver and receiver. It also strengthens reciprocal relationships, helps address social inequalities, and instills a sense of purpose. By caring for others, we build resilience during challenging times and contribute to a more compassionate, fair, and interconnected society. Ultimately, caring for others enriches our lives and reminds us of the importance of empathy and shared humanity.</p>
-
-          <div className="card__container">
+       
+           <div className="card__container">
               <p className="card__caption">Virtual hug just for you</p>
               <div className="card__image-box">
                   
@@ -98,7 +139,7 @@ function CardPage(){
   
               </div>
               <div className="card__quote">
-                  <p>Quote:</p>
+                  <p>A lovely message for you:</p>
                   <ul className="card__quote-wrap">
                      <MailIcon/>
                      <p className="card__quote-text">{quote}</p>
@@ -115,10 +156,13 @@ function CardPage(){
                     <li className="card__list">1:30</li>
                    </ul>
                   </div>
-                 <div className="card__radioBox">
+                 <div className="card__linkBox">
                    
-                    <a className='card__youTubeLink'href={musicLink} target='_blank' rel='noopener noreferrer'>{musicLink}</a>
+                    {/* <a className='card__youTubeLink'href={musicLink} target='_blank' rel='noopener noreferrer'>{musicLink}</a> */}
                     {/* <p>{musicLink}</p> */}
+
+                    <p className="card__plug">Plug your earphones in and listen</p> 
+                    <img className="card__icon" src={clickOne} alt="icon" />
                  </div>
                   
                  
@@ -128,11 +172,11 @@ function CardPage(){
 
             </div>
             <div className="card__btn-box">
-              <button className="card__btn" onClick={() => navigate('/CategoryForm')}>Back to Form</button>
+              <button className="card__btn-bck" onClick={() => navigate('/CategoryForm')}>Back to Form</button>
               <button  className="card__btn" onClick={handleDownloadPDF}>Download</button>
-          
-
             </div>
+
+          
          
 
         </section>

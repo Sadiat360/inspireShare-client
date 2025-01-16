@@ -58,6 +58,7 @@ function LoginPage(){
         });
         console.log('login response:', response.data);
         localStorage.setItem('authToken', response.data.authToken);
+        console.log('auth Token stored:', localStorage.getItem(response.data.authToken));
 
         setErrorMessage('');
         setSuccessMessage("Signup successful! Redirecting to Home Page...");

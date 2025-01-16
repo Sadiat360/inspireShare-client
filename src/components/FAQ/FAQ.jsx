@@ -2,6 +2,7 @@ import couchData from '../../assets/images/couch.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import FaqQuestion from '../FaqQuestion/FaqQuestion';
+import recData from '../../assets/images/rec.png'
 import './FAQ.scss'
 
 function FAQ(){
@@ -28,6 +29,9 @@ function FAQ(){
             </div>
             <div className='faq__image-container'>
                 <img className='faq__image' src={couchData} alt="couch image" />
+               <div className='faq__rec-img'>
+                 <img className='faq__rec' src={recData} alt="image" />
+                </div> 
             </div>
 
         </section>

@@ -19,8 +19,6 @@ function FaqQuestion({faqQuestion}){
                   
                        <h4 className='faq__question'>{faqQuestion.question}</h4>
                     
-                    
-                    
                   </div>
                   
 

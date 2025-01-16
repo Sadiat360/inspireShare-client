@@ -8,6 +8,7 @@ import CategoryForm from './components/CategoryForm/CategoryForm.jsx';
 import CardPage from './pages/CardPage/CardPage.jsx'
 import SignUpPage from './pages/SignUpPage/SignUpPage.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
+import StreakTrackPage from './pages/StreakTrackPage/StreakTrackPage.jsx';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <Route path='/LoveCategoryPage' element={< LoveCategoryPage/>}/>
       <Route path='/CardPage' element={< CardPage/>}/>
       <Route path='/CategoryForm' element={< CategoryForm/>}/>
+      <Route path='/StreakTrackPage' element={< StreakTrackPage/>}/>
 
      </Routes>
      

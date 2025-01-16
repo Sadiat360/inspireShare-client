@@ -6,14 +6,25 @@
 
 .curate{
     width: 100%;
-    padding: 5rem;
-    // align-items: center;
+    padding: 1rem;
+   
+
+    @include tablet{
+         padding: 5rem;
+    }
+    
     &__container{
-        width: 80%;
+        width: 90%;
         height: 40%;
         border-radius: 15px;
         border: 2px solid $primary-color; 
         margin: 0 auto;
+
+        
+        @include tablet{
+            width: 80%;
+            // height: 60%;
+         }
     }
 
     &__form{
@@ -56,6 +67,17 @@
     &__quote{
         @include flex-center(column);
     }
-   
+    &__btn{
+        width: 10rem;
+        padding: 10px 15px 10px 15px;
+        background-color: $secondary-color;
+        border: 2px solid $primary-color;
+        border-radius: 15px;
+    
+        &:hover{
+            background-color: $primary-color;
+            color: $secondary-color;
+        }
+    }
   
 }

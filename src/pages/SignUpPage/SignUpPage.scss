@@ -51,11 +51,14 @@
     &__form{
         background-color: $secondary-color;
         @include box-shadow;
-        width: 40%;
+        width: 90%;
         margin: 0 auto;
         margin-top: 2rem;
         margin-bottom: 2rem;
         padding: 1rem;
+        @include tablet{
+            width: 40%;
+        }
     }
     &__form-box{
         @include flex-center(column);
@@ -90,5 +93,9 @@
         border: 2px solid $primary-color;
         cursor: pointer;
         margin-bottom: 1rem;
+    }
+    &__text{
+        color: $inspireRed-color;
+        @include body-font-mob;
     }
 }

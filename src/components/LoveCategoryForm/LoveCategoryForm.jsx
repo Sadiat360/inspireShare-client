@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import YouTube from 'react-youtube';
-import './categoryForm.scss'
+import './LoveCategoryForm.scss'
 import axios from 'axios';
 
-function categoryForm() {
-    const [stressQuote, setStressQuote] = useState([]);
+function LoveCategoryForm() {
+    const [loveQuote, setLoveQuote] = useState([]);
     const[preview, setPreview] = useState(null);
     const [formData, setFormData] = useState({
         image: null,
@@ -100,9 +100,9 @@ function categoryForm() {
     };
     useEffect(()=>{
         async function getStressQuote() {
-            const response = await axios.get('http://localhost:7000/stressQuote');
-            console.log('This is stress quote:', response.data)
-            setStressQuote( response.data)
+            const response = await axios.get('http://localhost:7000/loveQuote');
+            console.log('This is love quote:', response.data)
+            setLoveQuote( response.data)
             
         }
         getStressQuote();
@@ -177,8 +177,8 @@ function categoryForm() {
                        value={formData.quote}
                        onChange={handleInputChange}
                    >
-                   {stressQuote.map((stress) =>
-                      <option key={stress.id} value={stress.message}>{stress.title}</option>
+                   {loveQuote.map((love) =>
+                      <option key={love.id} value={love.message}>{love.title}</option>
                    )} 
                    </select>
                </div>
@@ -194,4 +194,4 @@ function categoryForm() {
         </section>
     )
 }
-export default categoryForm;
+export default LoveCategoryForm;
