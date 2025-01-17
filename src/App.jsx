@@ -17,8 +17,8 @@ function App() {
   return (
     <>
      <BrowserRouter>
-     <Header/>
      <StreakProvider>
+     <Header/>
      <Routes>
       <Route path='/' element={<SignUpPage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
