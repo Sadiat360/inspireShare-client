@@ -10,6 +10,9 @@
     @include flex-center(row);
     align-items: center;
     justify-content: space-between;
+    @include tablet{
+       @include body-padding-tab;
+    }
 
     &__box{
         @include flex-center(row);
@@ -17,14 +20,21 @@
     }
     &__logo{
         @include logo;
+       
 
         &-text{
-            @include logo-text;
+            @include logo-text-mob;
+            @include tablet{
+                @include logo-text;
+            }
         }
     }
     &__nav{
-        width: 10%;
-        padding-right: 1rem;
+        width: 20%;
+        margin-right: 2rem;
+        @include tablet{
+            width: 10%; 
+        }
     }
     &__list{
         text-decoration: none;
@@ -35,5 +45,10 @@
         list-style: none;
         color: $secondary-color;
         cursor: pointer;
+        padding-bottom: 0.25rem;
+
+        &:hover{
+            border-bottom: 2px solid $secondary-color;
+        }
     }
 }

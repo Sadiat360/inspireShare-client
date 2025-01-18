@@ -67,23 +67,24 @@ function HomePage(){
         {heroSlides.length > 0 ? (
           <Hero slides={heroSlides} />
         ) : (
-          <p>Loading hero slides...</p> // Display a loading message while fetching
+          <p>Loading hero slides...</p> 
         )}
       </section>
        <section className='card'> 
-      <Carousel responsive={responsive}>
+         <h2 className='card__heading'>What do you think is going on?</h2>
 
-             {categoryImage.map ((category) =>{
-                return(
-                   <Category  key={category.id} category={category}/> 
-                )
-             })}
+          <Carousel responsive={responsive}>
 
-      </Carousel> 
+                 {categoryImage.map ((category) =>{
+                    return(
+                       <Category  key={category.id} category={category}/> 
+                    )
+                 })}
+
+          </Carousel> 
      
       </section> 
      
-     {/* /* Your other component */}
       <FAQ />
     
         </>

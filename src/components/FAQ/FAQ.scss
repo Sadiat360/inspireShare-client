@@ -6,9 +6,9 @@
 .faq{
     width: 100%;
     padding: 1rem;
-    // background-color: bisque;
     @include tablet{
-        padding: 2rem;
+        padding-top: 2rem;
+        @include body-padding-tab;
         @include flex-center(row);
         justify-content: space-between;
     }
@@ -19,10 +19,12 @@
         }
        
     }
+    &__txt{
+        padding-bottom: 1rem;
+    }
     &__image-container{
         width: 100%;
         padding: 1rem;
-        // background-color: red;
         position: relative;
         // bottom: -8%;
         right: -3%;
@@ -37,18 +39,4 @@
        
     }
     
-//    &__empty{
-//        width: 100%;
-//        position: absolute;
-//        top: 5rem;
-//        left: -5rem;
-//        background-color: red;
-//        border: 2px solid $primary-color;
-     
-
-//      @include tablet{
-//         width: 90%;
-        
-//      }
-//    }  
 }

@@ -2,7 +2,6 @@ import couchData from '../../assets/images/couch.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import FaqQuestion from '../FaqQuestion/FaqQuestion';
-import recData from '../../assets/images/rec.png'
 import './FAQ.scss'
 
 function FAQ(){
@@ -21,7 +20,7 @@ function FAQ(){
         <section className="faq">
 
             <div className="faq__box">
-                <h2>FAQ about how to show Emotional support</h2>
+                <h2 className='faq__txt'>FAQ about how to show Emotional support</h2>
               {faqQuestions.map((faqQuestion) => {
                 return( <FaqQuestion key={faqQuestion.id} faqQuestion={faqQuestion} />)
               })}  

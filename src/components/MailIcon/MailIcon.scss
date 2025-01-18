@@ -3,6 +3,12 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/typography' as *;
 
-.mailIcon{
-    color: $primary-color;
+
+svg{
+   width: 50px; 
+   color: $primary-color;
+
+   @include tablet{
+    width: 40px;
+   }
 }

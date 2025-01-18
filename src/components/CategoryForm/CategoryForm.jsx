@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import YouTube from 'react-youtube';
 import './categoryForm.scss'
 import axios from 'axios';
+import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
 
 function categoryForm() {
     const [stressQuote, setStressQuote] = useState([]);
@@ -35,14 +36,14 @@ function categoryForm() {
         const { name, value } = event.target;
         setFormData({...formData, [name]: value});
     }
-    const handleMusicFileChange = (event) => {
-        const file = event.target.files[0];
-        if(file){
-            const audioUrl = URL.createObjectURL(file);
-            setAudioSrc(audioUrl);
-            setError('');
-        }
-    }
+    // const handleMusicFileChange = (event) => {
+    //     const file = event.target.files[0];
+    //     if(file){
+    //         const audioUrl = URL.createObjectURL(file);
+    //         setAudioSrc(audioUrl);
+    //         setError('');
+    //     }
+    // }
     const handleMusicLinkChange = (event) => {
         const value = event.target.value;
         setFormData({ ...formData, musicLink: value});
@@ -75,24 +76,24 @@ function categoryForm() {
         }
       
     }    
-    const YouTubeMusicEmbed = ({ videoUrl}) =>{
-        const videoId = getVideoId(videoUrl);
+    // const YouTubeMusicEmbed = ({ videoUrl}) =>{
+    //     const videoId = getVideoId(videoUrl);
 
-        return videoId ? (
-            <YouTube
-             videoId={videoId}
-             opts={{
-                height: '390',
-                width: '640',
-                playerVars: {
-                    autoplay: 1,
-                }
-             }}
-             />
-        ) : (
-            <p>Invalid Youtube Link</p>
-        );
-    }
+    //     return videoId ? (
+    //         <YouTube
+    //          videoId={videoId}
+    //          opts={{
+    //             height: '390',
+    //             width: '640',
+    //             playerVars: {
+    //                 autoplay: 1,
+    //             }
+    //          }}
+    //          />
+    //     ) : (
+    //         <p>Invalid Youtube Link</p>
+    //     );
+    // }
     const getVideoId = (url) => {
         const regex = /(?:youtube\.com\/(?:[^/]+\/\S+\/|(?:v|e(?:mbed)?)\/|(?:.*[?&]v=))|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
         const matches = url.match(regex);
@@ -153,23 +154,12 @@ function categoryForm() {
                           onChange={handleMusicLinkChange}
                    />
                    {error && <p style={{color:'red'}}>{error}</p>}
+                   {/* <a href="https://youtube.com"><YouTubeIcon/></a> */}
                    {/* {formData.musicLink && !error && <YouTubeMusicEmbed videoUrl={formData.musicLink} />} */}
 
                    
                </div>
-               {/* <div>
-                   <label>Upload Audio File:</label>
-                   <input className="curate__form-input"
-                      type="file" 
-                      accept="audio/*" 
-                      onChange={handleMusicFileChange} />
-                   {audioSrc && (
-                       <audio controls>
-                           <source src={audioSrc} type="audio/mp3" />
-                           Your browser does not support the audio element.
-                       </audio>
-                   )}
-               </div> */}
+             
                <div className="curate__quote">
                    <label  className="curate__form-label">Select a quote:</label>
                    <select className="curate__form-input"

@@ -18,7 +18,7 @@ function Category({category}){
           <div className='card__image-frame'>
             <img  className='card__image' src={`http://localhost:7000/images/${category.photo}`} alt="image" />
           </div>
-          <Link to='/StressCategoryPage'>
+          <Link  className='card__link'to='/StressCategoryPage'>
              <div className='card__title-box'>
                <p className='card__title'>{category.title}</p>
              </div>

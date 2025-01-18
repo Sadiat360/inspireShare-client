@@ -3,7 +3,10 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/typography' as *;
 
-
+.play-icon{
+    color: red;
+}
 svg{
     color: $inspireBlack-color;
+    width: 550px;
 }

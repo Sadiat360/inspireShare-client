@@ -22,40 +22,51 @@
   text-decoration: none;
   padding: 1rem;
 }
+@mixin logo-text-mob{
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $secondary-color;
+  font-family: 'Lexend';
+  cursor: pointer;
+}
 @mixin logo-text {
   font-size: 2rem;
   text-decoration: none;
-  padding: 1rem;
   color: $secondary-color;
+  font-family: 'Lexend';
+  cursor: pointer;
 }
 
 @mixin body-font-mob {
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 15px;
   font-weight: 500; 
-  font-family: 'Lexend';
+  font-family: 'Lexend-regular';
 }
 @mixin body-font-tab {
   font-size: 1.25rem;
   line-height: 1.25rem;
+  font-family: 'Lexend-regular';
 
 }
 
 @mixin title-font-mob {
   font-size: 1.625rem;
   line-height: 38px;
-  font-weight: 300; 
+  font-weight: 600; 
   font-family: 'Lexend';
 }
 
 @mixin title-font-tab {
   font-size: 3.25rem;
   line-height: 66px;
+  font-family: 'Lexend';
 }
 @mixin heading-font-mob {
   font-size: 1.125rem;
   line-height: 23px;
   font-weight: 500;
+  font-family: 'Lexend';
 
 }
 @mixin heading-font-tab {

@@ -27,7 +27,9 @@ function StressCategoryPage(props){
   
     return(
         <>
-         {photoDetails?.map((photo)=>{
+      
+           
+        {photoDetails?.map((photo)=>{
             return (<StressCategory key ={photo.id} photo={photo}/>)
          })}
           <div className='category'>
@@ -35,7 +37,7 @@ function StressCategoryPage(props){
            <Link to='/CategoryForm'><button className='category__btn'>Start</button></Link> 
           </div>
         
-           
+        
         </>
        
     )

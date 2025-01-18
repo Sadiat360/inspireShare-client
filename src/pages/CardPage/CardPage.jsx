@@ -5,10 +5,12 @@ import html2canvas from 'html2canvas';
 import muiscBar from '../../assets/images/musicBar.png'
 import './CardPage.scss'
 import PlayIcon from "../../components/PlayIcon/PlayIcon";
+import playVector from '../../assets/images/playVector.png'
 import MailIcon from "../../components/MailIcon/MailIcon";
 import clickOne from '../../assets/icons/click1.png'
 import { useStreak } from "../../StreakContext/StreakContext";
-import axios from 'axios';
+import circleData from '../../assets/images/circle.png'
+
 
 
 
@@ -77,19 +79,19 @@ function CardPage(){
     return(
         <>
         <section className="card">
-            <h2>Why caring for others is important?</h2>
-          <p className="card__title">Caring for others is essential for building stronger communities, promoting emotional well-being, and fostering personal growth. Acts of kindness create bonds of trust and support, leading to a sense of belonging and happiness for both the giver and receiver. It also strengthens reciprocal relationships, helps address social inequalities, and instills a sense of purpose. By caring for others, we build resilience during challenging times and contribute to a more compassionate, fair, and interconnected society. Ultimately, caring for others enriches our lives and reminds us of the importance of empathy and shared humanity.</p>
+           
+         
        
            <div className="card__container">
               <p className="card__caption">Virtual hug just for you</p>
-              <div className="card__image-box">
-                  
-                  <img  className="card__image" src={image} alt="image" />
-                  {/* <img src=" alt="" ></img> */}
-  
+              <div className="card__circle-frame">
+                <img className="card__circle" src={circleData} alt="image" />
+              </div>
+              <div className="card__imgwrap">
+                  <img  className="card__img" src={image} alt="image" />
               </div>
               <div className="card__quote">
-                  <p>A lovely message for you:</p>
+                  {/* <p className="card__msg">A lovely message for you:</p> */}
                   <ul className="card__quote-wrap">
                      <MailIcon/>
                      <p className="card__quote-text">{quote}</p>
@@ -102,14 +104,11 @@ function CardPage(){
                    <img className="card__musicBar" src={muiscBar} alt="music bar" />
                    <ul className="card__item">
                     <li className="card__list">0:30</li>
-                    <PlayIcon/>
+                    <img className='card__play'src={playVector} alt="" />
                     <li className="card__list">1:30</li>
                    </ul>
                   </div>
                  <div className="card__linkBox">
-                   
-                    {/* <a className='card__youTubeLink'href={musicLink} target='_blank' rel='noopener noreferrer'>{musicLink}</a> */}
-                    {/* <p>{musicLink}</p> */}
 
                     <p className="card__plug">Plug your earphones in and listen</p> 
                     <img className="card__icon" src={clickOne} alt="icon" />
