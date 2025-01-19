@@ -16,6 +16,7 @@
     &__container{
         width: 90%;
         background-color: $secondary-color;
+        margin-bottom: 1rem;
         @include box-shadow;
         @include tablet{
             @include flex-center(row);
@@ -25,6 +26,13 @@
         }
        
     }
+    &__heading{
+        @include title-font-mob;
+    }
+    &__success{
+        @include body-font-mob;
+        color: $primary-color;
+    }
     &__image-wrap{
         position: relative;
         @include tablet{
@@ -33,6 +41,7 @@
     }
     &__image{
         width: 100%;
+       
     }
     &__content-box{
         position: absolute;
@@ -72,12 +81,15 @@
     &__input{
         padding: 0.5rem;
         border-radius: 5px;
-        border: 2px solid $primary-color;
-       @include body-font-mob;
+        border: 2px solid $inspireGrey-color;
+       @include input-font-mob;
     }
     &__txt{
-        @include body-font-mob;
+        font-size: 0.75rem;
         padding-bottom: 1rem;
+        padding-top: 0.25rem;
+        color: $primary-color;
+        font-family: 'lexend';
     }
     &__list{
         @include flex-center(row);

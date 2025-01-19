@@ -12,6 +12,7 @@
     justify-content: space-between;
     @include tablet{
        @include body-padding-tab;
+       
     }
 
     &__box{
@@ -30,16 +31,29 @@
         }
     }
     &__nav{
-        width: 20%;
-        margin-right: 2rem;
+        
+        display: none;
+
         @include tablet{
-            width: 10%; 
+            width: 20%;
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+       
+    }
+    &__nav-mob{
+        @include tablet{
+            display: none;
         }
     }
     &__list{
-        text-decoration: none;
-        @include flex-center(row);
-        justify-content: space-between;
+        @include tablet{
+            width: 100%;
+            text-decoration: none;
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+       
     }
     &__item{
         list-style: none;

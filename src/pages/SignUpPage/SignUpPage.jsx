@@ -94,7 +94,7 @@ function SignUpPage(){
                 </div>
 
                 <form onSubmit={handleOnSubmit}className="signUp__form">
-                    <p>SignUp</p>
+                    <p className="signUp__heading">SignUp</p>
                     {successMessage && <div className="signUp__success">{successMessage}</div>}
 
                     <div className="signUp__form-box">

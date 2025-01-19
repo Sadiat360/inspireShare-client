@@ -10,11 +10,6 @@
     overflow: hidden;
     background-position: center;
     background-size: cover;
-
-    @include tablet{
-        height: 100vh;
-    }
-
     &__slide-container{
        width: 200%;
        @include flex-center(row);
@@ -22,15 +17,21 @@
       
     }
     &__slide {
-        flex: 0 0 50%; 
+        width: 100%;
         position: relative;
         opacity: 0; 
         transition: opacity 1s ease-in-out; 
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
       }
+
+
    
     &__image{
         width: 100%;
-        object-fit: cover;
+        background-size: cover;
+        background-position: center;
 
     }
     &__text-box{
@@ -65,15 +66,14 @@
     }
 }
 .hero__slide.current-slide {
-    opacity: 1; /* Make the current slide visible */
+    opacity: 1; 
   }
   
   .hero__slide.next-slide {
-    opacity: 0; /* Next slide is hidden until active */
+    opacity: 0; 
   }
 
  .react-multi-carousel-list{
-    // background-color: red;
     padding-top: 2rem;
     padding-bottom: 5rem;
     padding-left: 2rem;

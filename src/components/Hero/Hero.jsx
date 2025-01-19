@@ -21,6 +21,8 @@ function Hero({slides}){
 
              
             <div className='hero__slide-container'>
+            
+
                 <div className='hero__slide current-slide'>
                   <img className='hero__image' src={`http://localhost:7000/images/${currentHero.photo}`} alt="image" />
                   <div className='hero__text-box'>
@@ -36,6 +38,7 @@ function Hero({slides}){
                    </div>
 
                 </div>
+    
                
 
             </div>

@@ -52,13 +52,13 @@ function LoginPage(){
        setApiError("");
 
        try{
-        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/users/login`,{
+        const {data} = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/users/login`,{
             email: formData.email,
             password: formData.password
         });
-        console.log('login response:', response.data);
-        localStorage.setItem('authToken', response.data.authToken);
-        console.log('auth Token stored:', localStorage.getItem(response.data.authToken));
+        console.log('login response:', data);
+        localStorage.setItem('authToken', data.token);
+        console.log('auth Token stored:', localStorage.getItem(data.token));
 
         setErrorMessage('');
         setSuccessMessage("Signup successful! Redirecting to Home Page...");
@@ -78,14 +78,14 @@ function LoginPage(){
                 </div>
                 <form onSubmit={handleOnSubmit} className="logIn__form" action="">
 
-                    <p>Log In</p>
+                    <p className="logIn__heading">Log In</p>
                     {successMessage && <div className="logIn__success">{successMessage}</div>}
                     <div className="logIn__form-box">
                         <label  className="logIn__label" htmlFor="email">Email</label>
                         <input className="logIn__input" type="text" 
                           name="email" 
                           id="email" 
-                          placeholder="please enter your email"
+                          placeholder="Enter your email"
                           onChange={(event) =>handleInputChange(event)}/> 
                          {errorMessage.email && <span className="signUp__text">{errorMessage.email}</span>}
                     </div> 
@@ -95,7 +95,7 @@ function LoginPage(){
                          type="password" 
                         name="password" 
                         id="password" 
-                        placeholder="please enter your password"
+                        placeholder="Enter your password"
                         onChange={(event) =>handleInputChange(event)}/>
                          {errorMessage.password && <span className="signUp__text">{errorMessage.password}</span>}
                     </div>

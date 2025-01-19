@@ -80,6 +80,12 @@
   font-family: 'Lexend';
   font-weight: 500;
 }
+@mixin input-font-mob {
+  font-size: 1rem;
+  line-height: 15px;
+  font-weight: 300; 
+  font-family: 'Lexend-regular';
+}
 @mixin body-padding-mob{
   padding-left: 1rem;
   padding-right: 1rem;

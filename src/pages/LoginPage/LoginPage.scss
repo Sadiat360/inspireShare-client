@@ -38,15 +38,6 @@
         bottom: 25px;
         padding: 1rem;
     }
-    // &__content{
-    //     @include heading-font-mob;
-    //     color: $secondary-color;
-    //     font-weight: 500;
-    // }
-    // &__caption{
-    //     @extend .signUp__content;
-    //     font-weight: 700;
-    // }
     &__form{
         background-color: $secondary-color;
         @include box-shadow;
@@ -72,8 +63,8 @@
     &__input{
         padding: 0.5rem;
         border-radius: 5px;
-        border: 2px solid $primary-color;
-       @include body-font-mob;
+        border: 2px solid $inspireGrey-color;
+       @include input-font-mob;
     }
     &__txt{
         @include body-font-mob;
@@ -94,5 +85,8 @@
         cursor: pointer;
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+    &__heading{
+        @include title-font-mob;
     }
 }

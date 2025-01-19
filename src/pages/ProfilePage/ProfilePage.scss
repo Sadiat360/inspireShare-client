@@ -1,0 +1,73 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.profile{
+    width: 100%;
+    padding-top: 5rem;
+
+   &__container{
+    width: 80%;
+    background-color: $secondary-color;
+    @include box-shadow;
+    margin: 0 auto;
+    padding: 1rem;
+
+    @include tablet{
+        width: 45%;
+        // margin-top: 2rem;
+    }
+   } 
+   &__pic{
+      height: 100px;
+      width: 45%;
+      background-color: $inspireGrey-color;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 2px solid $primary-color;
+
+      @include tablet{
+        width: 40%;
+        height: 150px;
+      }
+     
+   }
+   &__name-wrap{
+    width: 45%;
+    background-color: $inspireGrey-color;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 1rem;
+   }
+   &__name{
+    @include heading-font-mob;
+    text-align: center;
+    color: $primary-color;
+    font-weight: 700;
+   }
+   &__btn{
+        width: 100%;
+        padding: 10px 15px 10px 15px;
+        background-color: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $primary-color;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        
+
+    // &:hover{
+    //     background-color: $primary-color;
+    //     color: $secondary-color;
+    // }
+   }
+   &__email{
+     text-align: center;
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     @include body-font-mob;
+    color: $inspireBlack-color;
+     font-weight: 100;
+   }
+}

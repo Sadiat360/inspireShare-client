@@ -1,6 +1,7 @@
 import './Header.scss'
 import logoData from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom';
+import MenuBar from '../MenuBar/MenuBar';
 
 function Header(){
 
@@ -14,8 +15,13 @@ function Header(){
             <ul className='header__list'>
                <Link to='/HomePage'><li className='header__item'>Home</li></Link> 
                <Link to='/StreakTrackPage'><li className='header__item'>Streaks</li></Link> 
+               <Link to='/ProfilePage'><li className='header__item'>Profile</li></Link> 
             </ul>
            
+         </nav>
+         <nav className='header__nav-mob'>
+            <MenuBar />
+
          </nav>
 
 
