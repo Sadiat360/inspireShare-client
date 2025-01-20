@@ -76,7 +76,7 @@ function CardPage(){
     return(
         <>
         <section className="card">
-              <h2 className='card__heading'>What do you think is going on?</h2>
+      
            <div className="card__container">
               <p className="card__caption">Virtual hug just for you</p>
               <div className="card__circle-frame">
