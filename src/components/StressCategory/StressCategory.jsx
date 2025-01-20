@@ -1,5 +1,3 @@
-
-
 function StressCategory({photo}){
 
     return(

@@ -6,27 +6,32 @@
 .faq{
     width: 100%;
     padding: 1rem;
+    @include body-padding-mob;
     @include tablet{
-        padding-top: 2rem;
+        padding-top: 2.5rem;
         @include body-padding-tab;
         @include flex-center(row);
         justify-content: space-between;
+        margin-bottom: 1rem;
     }
 
     &__box{
         @include tablet{
-            width: 50%;
+            width: 45%;
         }
        
     }
     &__txt{
         padding-bottom: 1rem;
+        @include heading-font-mob;
+        @include tablet{
+            @include heading-font-tab;
+        }
     }
     &__image-container{
         width: 100%;
         padding: 1rem;
         position: relative;
-        // bottom: -8%;
         right: -3%;
        
         @include tablet{
@@ -35,7 +40,6 @@
     }
     &__image{
         width: 100%;
-       
        
     }
     

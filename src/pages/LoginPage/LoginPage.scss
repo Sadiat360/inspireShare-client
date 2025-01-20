@@ -15,6 +15,10 @@
     &__container{
         width: 90%;
         background-color: $secondary-color;
+        position: relative;
+        left: -100%;
+        opacity: 0;
+        animation: slideIn 1s ease-out forwards;
         @include box-shadow;
         @include tablet{
             @include flex-center(row);
@@ -23,6 +27,16 @@
           
         }
        
+    }
+    @keyframes slideIn {
+        from {
+            left: -100%;
+            opacity: 0;
+        }
+        to {
+            left: 0;
+            opacity: 1;
+        }
     }
     &__image-wrap{
         position: relative;
@@ -88,5 +102,15 @@
     }
     &__heading{
         @include title-font-mob;
+    }
+    &__content{
+        @include heading-font-mob;
+        color: $secondary-color;
+        font-weight: 500;
+    }
+    &__caption{
+        @include title-font-mob;
+        font-weight: 700;
+        color: $secondary-color;
     }
 }

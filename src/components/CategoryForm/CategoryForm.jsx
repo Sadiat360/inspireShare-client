@@ -1,23 +1,20 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import YouTube from 'react-youtube';
 import './categoryForm.scss'
 import axios from 'axios';
-import YouTubeIcon from "../YouTubeIcon/YouTubeIcon";
+
 
 function categoryForm() {
     const [stressQuote, setStressQuote] = useState([]);
     const[preview, setPreview] = useState(null);
+    const [error, setError] = useState('');
     const [formData, setFormData] = useState({
         image: null,
         musicLink: '',
         quote: '',
     });
-
-    const [audioSrc, setAudioSrc] = useState('')
-    const [error, setError] = useState('');
-
     const navigate = useNavigate();
+    
    
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -36,14 +33,6 @@ function categoryForm() {
         const { name, value } = event.target;
         setFormData({...formData, [name]: value});
     }
-    // const handleMusicFileChange = (event) => {
-    //     const file = event.target.files[0];
-    //     if(file){
-    //         const audioUrl = URL.createObjectURL(file);
-    //         setAudioSrc(audioUrl);
-    //         setError('');
-    //     }
-    // }
     const handleMusicLinkChange = (event) => {
         const value = event.target.value;
         setFormData({ ...formData, musicLink: value});
@@ -70,30 +59,12 @@ function categoryForm() {
                 return;
             }
             localStorage.setItem('formData', JSON.stringify(formData));
-              navigate('/CardPage'); // Navigate to Card page
+              navigate('/CardPage'); 
         }catch{
             alert ('An error occured while saving form')
         }
       
     }    
-    // const YouTubeMusicEmbed = ({ videoUrl}) =>{
-    //     const videoId = getVideoId(videoUrl);
-
-    //     return videoId ? (
-    //         <YouTube
-    //          videoId={videoId}
-    //          opts={{
-    //             height: '390',
-    //             width: '640',
-    //             playerVars: {
-    //                 autoplay: 1,
-    //             }
-    //          }}
-    //          />
-    //     ) : (
-    //         <p>Invalid Youtube Link</p>
-    //     );
-    // }
     const getVideoId = (url) => {
         const regex = /(?:youtube\.com\/(?:[^/]+\/\S+\/|(?:v|e(?:mbed)?)\/|(?:.*[?&]v=))|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
         const matches = url.match(regex);
@@ -112,10 +83,6 @@ function categoryForm() {
     }, []);
 
    
-
-
-
-
 
     return(
 
@@ -141,7 +108,7 @@ function categoryForm() {
                      {preview && (
                        <img src={preview} 
                        alt="preview"
-                       style={{ width: '100px', height: 'auto', borderRadius: '10px' }}
+                       style={{ width: '150px', height: 'auto', borderRadius: '10px' }}
                      />
                      )}
                </div>

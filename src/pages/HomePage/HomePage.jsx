@@ -6,10 +6,11 @@ import { useState,useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 import FAQ from '../../components/FAQ/FAQ';
+import HowItWorks from '../../components/HowItWorks/HowItWorks';
 
 
 function HomePage(){
-    const  [heroSlides, setheroSlides] = useState([]);
+    const [heroSlides, setheroSlides] = useState([]);
     const [categoryImage, setCategoryImage] = useState([])
 
     const responsive = {
@@ -84,7 +85,7 @@ function HomePage(){
           </Carousel> 
      
       </section> 
-     
+      <HowItWorks />
       <FAQ />
     
         </>

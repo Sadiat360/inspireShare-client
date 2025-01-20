@@ -28,30 +28,29 @@ Difficulty Expressing Support and Encouragement---People often struggle to find 
 2. Time-Consuming: Crafting personalized messages, finding relevant media, and sharing them can feel overwhelming.  
 3. Emotional Connection: Generic messages fail to convey the depth of care or understanding desired during emotional moments.  
 
-The app solves this by making it easy to create personalized, meaningful, and shareable expressions of encouragement, combining words, visuals, and music to uplift others effortlessly.It also gives users the option to make a video call to anyone they want to support or encourage.
-
+The app solves this by making it easy to create personalized, meaningful, and shareable expressions of encouragement, combining words, visuals, and music to uplift others effortlessly.
 
 
 ### Usage  
 1. Create a Card: Choose a quote, add a personal music link, and upload a photo or image.  
-2. Add Music: Search and attach a Spotify or YouTube link to the card for an emotional touch.  
+2. Add Music: Copy paste a SoundClound or YouTube link to the card for an emotional touch.  
 3. Share: Send the card directly to a friend via email, messaging apps, or social media. 
 
 
 
 ## Features 
 
-- As a user, i want to be able to select quotes without wasting time browisng the internet.
+- As a user, i want to be able to select quotes without wasting time browsing the internet.
 - As s user i don't have to master design tools before i can make a beautify lovely card design.
 
 - As a user i don't want to share music, images, and qoutes separately (it's time consuming)
 - As a user i want to be able to download the card without any hassle
-- As a user i want to be to make a video call when i don't really have much time to curate a card.
+- As a user i want to be to send the card to anyone without compelling them to signUp to website or follow a link befor they can view the card .
 
 
 - Inspirational Quote Library: select random quotes categorized by themes such as resilience, hope, and positivity.  
 - Customizable Cards: Add personal touches with images, music links, and customized messages.  
-- Music Integration: Include meaningful music via Spotify or YouTube links.  
+- Music Integration: Include meaningful music via SoundCloud or YouTube links.  
 - Shareable Creations: Send cards directly to friends or share them on social platforms by downloading card as pdf.   
 
 
@@ -74,11 +73,15 @@ The app solves this by making it easy to create personalized, meaningful, and sh
     - jspdf
     -react-youtube
     - html2canvas
+    - react-carousel
 
 - Server Libraries:
     - express
     - knex
     - jwt
+    - Cors
+    - bcrypt
+    - mysql2
 
 
 ---
@@ -97,6 +100,7 @@ The app solves this by making it easy to create personalized, meaningful, and sh
 - Category page
 - Card/Download
 - Streak Tracker page
+- User profile/log out
 
 
 ### Mockups
@@ -110,7 +114,7 @@ The app solves this by making it easy to create personalized, meaningful, and sh
 ### Home Page
 ![](src/assets/mockups/HomePage-insp.png)
 
-### TemplateDetails Page
+### CategoryDetails Page
 ![](src/assets/mockups/TemplatesDetails.png)
 
 ### Curate Template Page
@@ -238,13 +242,13 @@ Response:
   - Card Carousel of 'supportee's mood'/template
   - Create a GET request for quotes that is tailored for each mood
 
-- Feature: TemplateDetails page
-  - implement view template/mood page
+- Feature: CategoryDetails page
+  - implement view category/mood page
   - implement brief advantage of each support
 
-- Feature: Curate-Template page
+- Feature: Curate page
   - implement a template page where images,music & qoute can be added to form
-  - Create a GET /qoutes/stress or any mood dierectory
+  - Create a GET /qoutes/stress or any mood directory
 
 - Feature: Card Page
   - implement the final card design page 
@@ -253,8 +257,13 @@ Response:
 
 - Feature: Streak Page
   - implement the streak count design page 
-  - install jspdf library
-  - implement a download pdf button
+  - implement a global state for streak counts
+  - implement streak counts that increments when user clicks download pdf button
+
+- Feature: Profile Page
+  - implement User profile page 
+  - implement a GET request to backend for loggedin user
+  - implement a log out button
 
 
   
@@ -263,4 +272,4 @@ Response:
 - Introduce gamification with badges and rewards.  
 - Expand quote categories and support for multiple languages.  
 - Implement AI suggestions for quotes and card designs.  
---- video Call: A video call might be a better option for some users. 
+- video Call: A video call might be a better option for some users. 

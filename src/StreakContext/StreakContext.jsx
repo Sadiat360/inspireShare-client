@@ -3,17 +3,13 @@ import React, {createContext, useState, useContext, useEffect} from "react";
 const StreakContext = createContext();
 
 export const StreakProvider = ({children}) => {
-    const [streakCount, setStreakCount] = useState(() => {
+        const [streakCount, setStreakCount] = useState(() => {
         const savedStreak = localStorage.getItem('streakCount');
         return savedStreak ? Number(savedStreak) : 0;
     });
 
-  
-
     const incrementStreak = () => {
-        console.log('incrementStreak called') ;
         setStreakCount((prev) => {
-            console.log('Previous Streak:', prev);
             const newCount = prev + 1;
             localStorage.setItem('streakCount',newCount )
            return newCount;
@@ -22,6 +18,7 @@ export const StreakProvider = ({children}) => {
 
     useEffect(() => {
         localStorage.setItem('streakCount', streakCount);
+        // localStorage.removeItem('streakCount', streakCount)
     }, [streakCount]);
 
     return(

@@ -6,7 +6,6 @@ import './ProfilePage.scss';
  function ProfilePage(){
     const [userData, setUserData] = useState([]);
     const [error, setError] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
      const  getUserData = async () => {

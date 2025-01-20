@@ -75,6 +75,11 @@ function LoginPage(){
             <div className="logIn__container">
                 <div className="logIn__image-wrap">
                     <img  className="signUp__image" src={signUpData} alt="log in image" />
+                    <article className="signUp__content-box">
+                       <h1 className="logIn__caption">Welcome to InspireShare</h1>
+                        <p className="logIn__content">Are you ready to Inspire someone today? </p>
+                        
+                    </article>
                 </div>
                 <form onSubmit={handleOnSubmit} className="logIn__form" action="">
 

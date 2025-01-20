@@ -60,10 +60,8 @@ function CardPage(){
 
             pdf.addImage(imgData, 'PNG',0,0, imgWidth,imgHeight);
 
-                   // Fetch music link from formData
             const musicLink = formData?.musicLink;
-    
-            // Add clickable music link
+
             if (musicLink) {
                 pdf.textWithLink('Click to listen to the music', 10, imgHeight + 10, {
                     url: musicLink,
@@ -73,15 +71,12 @@ function CardPage(){
                 pdf.save("styled_card.pdf");
          });
         
-        // alert('Your card has been downloaded successfully!');
         
     }
     return(
         <>
         <section className="card">
-           
-         
-       
+              <h2 className='card__heading'>What do you think is going on?</h2>
            <div className="card__container">
               <p className="card__caption">Virtual hug just for you</p>
               <div className="card__circle-frame">
@@ -91,7 +86,6 @@ function CardPage(){
                   <img  className="card__img" src={image} alt="image" />
               </div>
               <div className="card__quote">
-                  {/* <p className="card__msg">A lovely message for you:</p> */}
                   <ul className="card__quote-wrap">
                      <MailIcon/>
                      <p className="card__quote-text">{quote}</p>

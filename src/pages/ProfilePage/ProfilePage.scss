@@ -16,7 +16,6 @@
 
     @include tablet{
         width: 45%;
-        // margin-top: 2rem;
     }
    } 
    &__pic{
@@ -55,12 +54,7 @@
         border: 2px solid $primary-color;
         cursor: pointer;
         margin-bottom: 1rem;
-        
 
-    // &:hover{
-    //     background-color: $primary-color;
-    //     color: $secondary-color;
-    // }
    }
    &__email{
      text-align: center;

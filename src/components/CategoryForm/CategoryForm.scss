@@ -15,11 +15,9 @@
     
     &__container{
         width: 90%;
-        // height: 80%;
         border-radius: 15px;
         background-color: $inspireGrey-color;
         padding-bottom: 5rem;
-        // border: 2px solid $primary-color; 
         margin: 0 auto;
 
         
@@ -31,7 +29,6 @@
 
     &__form{
         width: 80%;
-        // height: 40%;
         background-color: $secondary-color;
         margin: 0 auto;
         padding: 1rem;
@@ -40,19 +37,17 @@
         @include box-shadow;
         margin-top: 2rem;
         margin-bottom: 2rem;
-       
-       
-        
+    
 
         &-label{
             padding-bottom: 1rem;
+            @include label-font;
             font-weight: 700;
         }
 
         &-input{
             padding-bottom: 1rem;
             margin-bottom: 1rem;
-            // background-color: aquamarine;
         }
 
     }
