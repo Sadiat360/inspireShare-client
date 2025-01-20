@@ -1,0 +1,73 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.howItWorks{
+    width: 100%;
+    margin-bottom: 2.5rem;
+    @include body-padding-mob;
+    @include tablet{
+        @include body-padding-tab;
+    }
+
+    &__heading{
+        text-align: center;
+        @include heading-font-mob;
+        @include tablet{
+            @include heading-font-tab;
+        }
+    }
+    
+    &__frame{
+        @include flex-center(column);
+        justify-content: space-between;
+        align-items: center;
+        @include tablet{
+            @include flex-center(row);
+        }
+    }
+    &__container{
+        width: 90%;
+        @include flex-center(row);
+        justify-content: space-between;
+        @include tablet{
+            width: 45%;
+        }
+       
+    }
+    &__wrap{
+        width: 90%;
+        @include tablet{
+            width: 45%;
+        }
+       
+    }
+    &__pic{
+        width: 100%;
+    }
+    &__box{
+        width: 80%;
+        height: 450px;
+        @include flex-center(column);
+        justify-content: space-between;
+    }
+    &__item{
+        padding-top: 1rem;
+    }
+    &__list{
+        list-style: none;
+        @include heading-font-mob;
+        font-weight: 600;
+        color: $primary-color;
+        
+    }
+    &__list-txt{
+        list-style: none;
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-mob;
+        }
+    }
+}

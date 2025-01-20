@@ -1,0 +1,221 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.card{
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+
+    // &__frame{
+    //     width: 100%;
+    //     padding-left: 1rem;
+    //     padding-right: 1rem;
+    //     @include flex-center(column);
+    //     align-items: center;
+    //     justify-content: center;
+      
+    //     @include tablet {
+    //         width: 80%;
+    //         padding-left: 2rem;
+    //         padding-right: 2rem;
+    //     }
+    // }
+
+    &__container{
+        width: 90%;
+        padding: 2rem;
+        background-color: $secondary-color;
+        @include box-shadow;
+        margin: 0 auto;
+        position: relative;
+       
+
+        @include tablet{
+            width: 80%;
+            // padding-left: 5rem;
+            // padding-right: 5rem;
+        }
+        @include desktop{
+            width: 60%;
+            // height: 31.25rem;
+            // padding-left: 5rem;
+            // padding-right: 5rem;
+        }
+       
+    }
+    &__circle-frame{
+        width: 90%;
+        margin: 0 auto;
+        // height: 20rem;
+
+        @include tablet{
+            width: 70%;
+            height: 30rem;
+           
+        }
+       
+    }
+    &__circle{
+        width: 100%;
+
+        @include tablet{
+           height: 100%;
+        }
+       
+    }
+    &__caption{
+        padding: 1rem;
+        text-align: center;
+        @include heading-font-mob;
+
+        @include tablet{
+            @include heading-font-tab;
+        }
+    }
+    &__imgwrap{
+        width: 60%;
+        height: 15.625rem;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 40%;
+        left: 5.625rem;
+        @include tablet{
+            width: 50%;
+            height:  400px;
+            bottom: 35%;
+            left: 12.5rem;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+       border-radius: 50%;
+    }
+    &__quote{
+        padding-top: 1rem;
+
+     }
+    &__quote-text{
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-tab;
+         }
+    }
+    &__musicLink{
+        width: 100%;
+
+        &-frame{
+          width: 100%;
+          padding: 1rem;
+        }
+    }
+    &__musicBar{
+        width: 100%;
+    }
+    &__item{
+        @include flex-center(row);
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__list{
+        list-style: none;
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-tab;
+        }
+    }
+    &__linkBox{
+        width: 70%;
+        @include flex-center(row);
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet{
+            width: 50%;
+        }
+    }
+    
+    &__youTubeLink{
+        color: $inspireBlack-color;
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-tab;
+        }
+    }
+    &__btn-box{
+        width: 90%;
+        @include flex-center(row);
+        justify-content: space-between;
+        margin: 0 auto;
+
+        @include tablet {
+            width: 70%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+    &__btn{
+        width: 50%;
+        padding: 12px 15px 12px 15px;
+        margin-top: 2rem;
+        border: 2px solid $primary-color;
+        border-radius: 15px;
+        @include box-shadow;
+        &:hover{
+            background-color: $primary-color;
+            color: $secondary-color;
+        }
+        @include tablet{
+            width: 35%;
+        }
+    }
+    &__btn-bck{
+        @extend .card__btn;
+        margin-right: 0.5rem;
+    }
+    &__quote-caption{
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: 'lexend';
+    }
+    &__quote-wrap{
+        @include flex-center(row);
+        align-items: center;
+        
+    }
+    &__quote-text{
+        @include body-font-mob;
+        padding: 1rem;
+
+        @include tablet{
+            @include body-font-tab;
+        }
+    }
+    &__plug{
+        @include body-font-mob;
+
+        @include tablet{
+            @include body-font-tab;
+        }
+    }
+    &__play{
+        width: 50px;
+    }
+   
+}
+.card__icon{
+    border: $primary-color;
+    width: 35px;
+    height: 10%;
+    @include tablet{
+        width: 30px;
+    }
+}

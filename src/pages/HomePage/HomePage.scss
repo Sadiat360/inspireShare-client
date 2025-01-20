@@ -1,0 +1,89 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.hero{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    &__slide-container{
+       width: 200%;
+       @include flex-center(row);
+       transition: transform 1s ease-in-out;
+      
+    }
+    &__slide {
+        width: 100%;
+        position: relative;
+        opacity: 0; 
+        transition: opacity 1s ease-in-out; 
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
+   
+    &__image{
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+
+    }
+    &__text-box{
+        width: 70%;
+        position: absolute;
+        top: 4.688rem;
+        left: 20px;
+        color: $secondary-color;
+        z-index: 10;
+
+        @include tablet{
+            width: 45%; 
+            top: 4.375rem;
+            padding-left: 1.5rem;
+        }
+    }
+    &__title{
+        @include title-font-mob;
+        padding-bottom: 1rem;
+
+        @include tablet{
+            @include title-font-tab;
+        }
+    }
+    &__sub{
+        @include body-font-mob;
+        color: $secondary-color;
+        
+        @include tablet{
+            @include body-font-tab;
+            color: $secondary-color;
+        }
+
+    }
+}
+.hero__slide.current-slide {
+    opacity: 1; 
+  }
+  
+  .hero__slide.next-slide {
+    opacity: 0; 
+  }
+
+ .react-multi-carousel-list{
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+   
+
+ }
+ .react-multi-carousel-item{
+    @include tablet{
+        width: 350px;
+        margin-left: 1rem;
+    }
+ }

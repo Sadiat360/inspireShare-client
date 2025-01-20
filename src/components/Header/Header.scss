@@ -1,0 +1,68 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.header{
+    width: 100%;
+    height: 5rem;
+    background-color: $primary-color;
+    @include flex-center(row);
+    align-items: center;
+    justify-content: space-between;
+    @include tablet{
+       @include body-padding-tab;
+       
+    }
+
+    &__box{
+        @include flex-center(row);
+        align-items: center;
+    }
+    &__logo{
+        @include logo;
+       
+
+        &-text{
+            @include logo-text-mob;
+            @include tablet{
+                @include logo-text;
+            }
+        }
+    }
+    &__nav{
+        
+        display: none;
+
+        @include tablet{
+            width: 20%;
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+       
+    }
+    &__nav-mob{
+        @include tablet{
+            display: none;
+        }
+    }
+    &__list{
+        @include tablet{
+            width: 100%;
+            text-decoration: none;
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+       
+    }
+    &__item{
+        list-style: none;
+        color: $secondary-color;
+        cursor: pointer;
+        padding-bottom: 0.25rem;
+
+        &:hover{
+            border-bottom: 2px solid $secondary-color;
+        }
+    }
+}

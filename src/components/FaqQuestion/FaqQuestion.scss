@@ -1,0 +1,28 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.faq__header{
+    width: 100%;
+    padding: 1rem;
+    background-color: $secondary-color;
+    @include box-shadow;
+    margin-bottom: 1rem;
+  
+}
+.faq__wrap{
+    width: 100%;
+    @include flex-center(row);
+    margin-top: 1rem;
+  }
+.faq__answer{
+    padding: 1rem;
+    @include body-font-mob;
+  }
+.faq__question{
+    @include heading-font-mob;
+    font-weight: 600;
+    
+   
+}

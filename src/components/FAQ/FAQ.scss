@@ -1,0 +1,46 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.faq{
+    width: 100%;
+    padding: 1rem;
+    @include body-padding-mob;
+    @include tablet{
+        padding-top: 2.5rem;
+        @include body-padding-tab;
+        @include flex-center(row);
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    &__box{
+        @include tablet{
+            width: 45%;
+        }
+       
+    }
+    &__txt{
+        padding-bottom: 1rem;
+        @include heading-font-mob;
+        @include tablet{
+            @include heading-font-tab;
+        }
+    }
+    &__image-container{
+        width: 100%;
+        padding: 1rem;
+        position: relative;
+        right: -3%;
+       
+        @include tablet{
+            width: 45%;
+        }
+    }
+    &__image{
+        width: 100%;
+       
+    }
+    
+}

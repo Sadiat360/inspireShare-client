@@ -1,0 +1,132 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+.signUp{
+    width: 100%;
+    padding: 1rem;
+    padding-top: 5rem;
+
+    @include tablet{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    &__container{
+        width: 90%;
+        background-color: $secondary-color;
+        margin-bottom: 1rem;
+        position: relative;
+        left: -100%;
+        opacity: 0;
+        animation: slideIn 1s ease-out forwards;
+        @include box-shadow;
+        @include tablet{
+            @include flex-center(row);
+            width: 70%;
+            margin: 0 auto;
+          
+        }
+       
+    }
+
+    @keyframes slideIn {
+        from {
+            left: -100%;
+            opacity: 0;
+        }
+        to {
+            left: 0;
+            opacity: 1;
+        }
+    }
+    &__heading{
+        @include title-font-mob;
+    }
+    &__success{
+        @include body-font-mob;
+        color: $primary-color;
+    }
+    &__image-wrap{
+        position: relative;
+        @include tablet{
+            width: 50%;
+        }
+    }
+    &__image{
+        width: 100%;
+       
+    }
+    &__content-box{
+        position: absolute;
+        bottom: 25px;
+        padding: 1rem;
+    }
+    &__content{
+        @include heading-font-mob;
+        color: $secondary-color;
+        font-weight: 500;
+    }
+    &__caption{
+        @extend .signUp__content;
+        font-weight: 700;
+    }
+    &__form{
+        background-color: $secondary-color;
+        @include box-shadow;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        @include tablet{
+            width: 40%;
+        }
+    }
+    &__form-box{
+        @include flex-center(column);
+    }
+    &__label{
+        padding-bottom: 0.25rem;
+        padding-top: 0.5rem;
+        @include body-font-mob;
+        font-weight: 500;
+    }
+    &__input{
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 2px solid $inspireGrey-color;
+       @include input-font-mob;
+    }
+    &__txt{
+        font-size: 0.75rem;
+        padding-bottom: 1rem;
+        padding-top: 0.25rem;
+        color: $primary-color;
+        font-family: 'lexend';
+    }
+    &__list{
+        @include flex-center(row);
+        text-decoration: none;
+        @include body-font-mob;
+    }
+
+    &__btn{
+        width: 100%;
+        padding: 10px 15px 10px 15px;
+        background-color: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $primary-color;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+    &__text{
+        color: $inspireRed-color;
+        font-size: 0.75rem;
+        line-height: 15px;
+        font-weight: 500; 
+        font-family: 'Lexend-regular';
+    }
+}
+

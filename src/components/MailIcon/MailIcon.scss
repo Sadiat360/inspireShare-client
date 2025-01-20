@@ -1,0 +1,14 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+
+svg{
+   width: 50px; 
+   color: $primary-color;
+
+   @include tablet{
+    width: 40px;
+   }
+}
