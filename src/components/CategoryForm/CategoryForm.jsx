@@ -113,9 +113,9 @@ function categoryForm() {
                      )}
                </div>
                <div className="curate__music">
-                   <label className="curate__form-label" htmlFor="musciLink">Music Link (YouTube, Spotify, or SoundCloud):</label>
+                   <label className="curate__form-label" htmlFor="musciLink">Music Link (YouTube, or SoundCloud):</label>
                    <input className="curate__form-input"
-                          type="text"
+                          type="url"
                           name="musicLink" 
                           value={formData.musicLink}
                           onChange={handleMusicLinkChange}

@@ -4,7 +4,6 @@ import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import muiscBar from '../../assets/images/musicBar.png'
 import './CardPage.scss'
-import PlayIcon from "../../components/PlayIcon/PlayIcon";
 import playVector from '../../assets/images/playVector.png'
 import MailIcon from "../../components/MailIcon/MailIcon";
 import clickOne from '../../assets/icons/click1.png'
@@ -16,7 +15,6 @@ import circleData from '../../assets/images/circle.png'
 
 
 function CardPage(){
-    // const [streaks, setStreaks] = useState([]);
     const navigate = useNavigate();
     const [error, setError] = useState([]);
     const [formData, setFormData] = useState(null);
@@ -26,7 +24,7 @@ function CardPage(){
 
 
     useEffect(() =>{
-          const savedData = localStorage.getItem('formData'); /// i used loclal storage to get form data inputs beacsue it was stored locally when users click submit 
+          const savedData = localStorage.getItem('formData'); 
           if(savedData){
             setFormData(JSON.parse(savedData));
           }
@@ -111,8 +109,6 @@ function CardPage(){
                  
                 </div>
               
-              
-
             </div>
             <div className="card__btn-box">
               <button className="card__btn-bck" onClick={() => navigate('/CategoryForm')}>Back to Form</button>
@@ -120,9 +116,6 @@ function CardPage(){
             </div>
 
            
-          
-         
-
         </section>
       
 
