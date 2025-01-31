@@ -1,9 +1,25 @@
 import './Header.scss'
 import logoData from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom';
-import MenuBar from '../MenuBar/MenuBar';
+import MenuBar from '../../svgs/MenuBar/MenuBar';
+import { useState } from 'react';
+import CloseBar from '../../svgs/CloseBar/CloseBar';
 
 function Header(){
+   const [openNav, setOpenNav]= useState([]);
+
+   function toggleMenuBar(){
+      setOpenNav(!openNav);
+   }
+   const handleSectionClick = (event, sectionId) =>{
+      event.preventDefault();
+      const section = document.getElementById(sectionId);
+      if(section){
+         section.scrollIntoView({behavior: "smooth"});
+      }
+      toggleMenuBar();
+   }
+  
 
     return(
        <header className='header'>
@@ -13,16 +29,33 @@ function Header(){
          </div>
          <nav className='header__nav'>
             <ul className='header__list'>
-               <Link to='/HomePage'><li className='header__item'>Home</li></Link> 
-               <Link to='/StreakTrackPage'><li className='header__item'>Streaks</li></Link> 
-               <Link to='/ProfilePage'><li className='header__item'>Profile</li></Link> 
+              <li className='header__item'> <Link to='/HomePage'>Home</Link></li> 
+              <li className='header__item'> <Link to='/StreakTrackPage'>Streaks</Link> </li>
+              <li className='header__item'> <Link to='/ProfilePage'>Profile</Link> </li>
             </ul>
            
          </nav>
-         <nav className='header__nav-mob'>
-            <MenuBar />
+         <button  className="header__menu-btn" 
+                  onClick={toggleMenuBar} 
+                  aria-label='Toggle Menu'>
+                  <MenuBar />
+         </button>
+         {openNav === true ? ( <nav className='header__nav-mob'>
+          
+          <div className='header__mobNav'>
+              <button  className="header__close-btn"
+               onClick={toggleMenuBar} 
+               aria-label='Close Menu'><CloseBar/></button>
 
-         </nav>
+               <ul className='header__list-mob'>
+                     <li onClick={(e) => handleSectionClick(e, 'hero')} className='header__li'><Link to='/HomePage'>Home</Link> </li>
+                     <li onClick={(e) => handleSectionClick(e, 'streak')} className='header__li'> <Link to='/StreakTrackPage'>Streaks</Link> </li>
+                     <li onClick={(e) => handleSectionClick(e, 'profile')}className='header__li'> <Link to='/ProfilePage'>Profile</Link> </li>
+                   
+               </ul>
+            </div>
+         </nav>)  : null}
+         
 
 
 

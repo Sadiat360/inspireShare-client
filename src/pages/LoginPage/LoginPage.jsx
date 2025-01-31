@@ -55,13 +55,18 @@ function LoginPage(){
         const {data} = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/users/login`,{
             email: formData.email,
             password: formData.password
-        });
+        },
+        {
+            withCredentials: true
+        }
+    );
         console.log('login response:', data);
-        localStorage.setItem('authToken', data.token);
-        console.log('auth Token stored:', localStorage.getItem(data.token));
+        console.log('Cookies sent:', document.cookie);
+        // localStorage.setItem('authToken', data.token);
+        // console.log('auth Token stored:', localStorage.getItem(data.token));
 
         setErrorMessage('');
-        setSuccessMessage("Signup successful! Redirecting to Home Page...");
+        setSuccessMessage("Log In successful! Redirecting to Home Page...");
         setTimeout(() =>{
             navigate('/Homepage')
         }, 2000)

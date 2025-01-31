@@ -1,6 +1,6 @@
 import './FaqQuestion.scss';
 import { useState } from "react";
-import DropdownArrow from "../DropdownArrow/DropdownArrow";
+import DropdownArrow from "../../svgs/DropdownArrow/DropdownArrow";
 
 
 function FaqQuestion({faqQuestion}){

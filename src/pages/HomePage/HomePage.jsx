@@ -63,7 +63,7 @@ function HomePage(){
     return(
         <>
         
-        <section className='hero'>
+        <section className='hero' id='hero'>
           
         {heroSlides.length > 0 ? (
           <Hero slides={heroSlides} />
@@ -71,8 +71,8 @@ function HomePage(){
           <p>Loading hero slides...</p> 
         )}
       </section>
-       <section className='card'> 
-         <h2 className='card__heading'>What do you think is going on?</h2>
+       <section className='carousel'> 
+         <h2 className='carousel__heading'>What do you think is going on?</h2>
 
           <Carousel responsive={responsive}>
 

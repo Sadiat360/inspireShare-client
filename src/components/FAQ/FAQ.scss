@@ -17,11 +17,12 @@
 
     &__box{
         @include tablet{
-            width: 45%;
+            width: 50%;
         }
        
     }
     &__txt{
+       padding-left: 1rem;
         padding-bottom: 1rem;
         @include heading-font-mob;
         @include tablet{

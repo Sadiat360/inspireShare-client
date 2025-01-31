@@ -9,7 +9,7 @@ function StreakTrackPage(){
     localStorage.getItem(streakCount);
     
     return(
-        <section className="streak">
+        <section className="streak" id="streak">
             <div className="streak__container">
                 <div className="streak__image-wrap">
                   <img className="streak__image" src={plantData} alt="image" />

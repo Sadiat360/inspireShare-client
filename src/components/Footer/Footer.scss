@@ -1,0 +1,76 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.footer{
+    background-color: $primary-color;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+   
+    @include tablet{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 15rem;
+        margin-top: 20rem;
+    }
+   
+
+    &__container{
+   
+        align-items: center;
+        margin: 0 auto;
+        @include tablet{
+            @include flex-center(row);
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+    }
+    &__logo{
+        @include logo;
+        padding-left: 0;
+       
+
+        &-text{
+            @include logo-text-mob;
+            @include tablet{
+                @include logo-text;
+            }
+        }
+    }
+    &__figure{
+        @include flex-center(row);
+        align-items: center;
+    }
+    &__box{
+
+        @include tablet{
+            width: 40%;
+            padding-top: 2rem;
+            @include flex-center(row);
+            justify-content: space-between;
+        }
+       
+    }
+    &__item{
+        color: $secondary-color;
+        list-style: none;
+        margin-bottom: 1rem;
+        cursor: pointer;
+    }
+    &__copy{
+        color: $secondary-color;
+        font-size: 1rem;
+        opacity: 50%;
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        padding-left: 0.5rem;
+        @include tablet{
+            padding-left: 2rem;
+        }
+    }
+}

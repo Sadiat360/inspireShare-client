@@ -5,7 +5,7 @@ import html2canvas from 'html2canvas';
 import muiscBar from '../../assets/images/musicBar.png'
 import './CardPage.scss'
 import playVector from '../../assets/images/playVector.png'
-import MailIcon from "../../components/MailIcon/MailIcon";
+import MailIcon from "../../svgs/MailIcon/MailIcon";
 import clickOne from '../../assets/icons/click1.png'
 import { useStreak } from "../../StreakContext/StreakContext";
 import circleData from '../../assets/images/circle.png'
@@ -76,10 +76,8 @@ function CardPage(){
         <section className="card">
       
            <div className="card__container">
-              <p className="card__caption">Virtual hug just for you</p>
-              <div className="card__circle-frame">
-                <img className="card__circle" src={circleData} alt="image" />
-              </div>
+              <p className="card__caption">Virtual card just for you</p>
+              
               <div className="card__imgwrap">
                   <img  className="card__img" src={image} alt="image" />
               </div>

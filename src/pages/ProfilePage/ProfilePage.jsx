@@ -6,27 +6,30 @@ import './ProfilePage.scss';
  function ProfilePage(){
     const [userData, setUserData] = useState([]);
     const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState();
     const navigate = useNavigate();
 
      const  getUserData = async () => {
-        const authToken = localStorage.getItem('authToken');
+      
+         setIsLoading(true);
          try{
             const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/users/profile`,
                 {
-                    headers:{
-                        authorisation: `Bearer ${authToken}`,
-                    },
+                   withCredentials: true,
                 }
             );
 
             setUserData(data);
             setIsLoading(false)
          }catch (error){
-            if(error.status === 401){
+            if(error.response && error.response.status === 401){
                 setError('You must be logged in to view this page');
-                setIsLoading(false)
+               
 
+            }else{
+               setError('An error occurred while fetching your profile');
             }
+            setIsLoading(false)
          }
      };
 
@@ -34,14 +37,23 @@ import './ProfilePage.scss';
         getUserData();
      }, []);
 
-     const handleLogOut = () => {
-        localStorage.removeItem("authToken");
-        navigate('/')
-     }
+     const handleLogOut = async () => {
+       
+         try{
+            console.log('checking cookies before logout:', document.cookie)
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/users/logOut`, {},{
+               withCredentials: true
+            });
+
+            navigate('/login')
+         }catch (error){
+             console.error('Logout unsuccessful', error);
+         } 
+     };
         return(
             <main>
 
-               <section className='profile'>
+               <section className='profile' id='profile'>
                 <div className='profile__container'>
                     <div className='profile__pic'>
                        

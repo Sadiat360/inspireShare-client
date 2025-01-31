@@ -6,6 +6,7 @@
 .music{
     width: 100%;
     padding: 1rem;
+    padding-bottom: 5rem;
     ////15px ---0.938
     
     @include tablet{
@@ -22,7 +23,6 @@
      }
 
     &__box{
-        // background-color: #9EBC7E;
        padding: 1rem;
 
         @include tablet{
@@ -31,7 +31,6 @@
        
     }
     &__image-container{
-        // border-radius: 0.938rem;
         width: 100%;
         margin-top: 1rem;
 
@@ -43,7 +42,6 @@
     }
     &__image{
         width: 100%;
-        // border-radius: 0.938rem;
     }
     &__title{
         color: $inspireBlack-color;

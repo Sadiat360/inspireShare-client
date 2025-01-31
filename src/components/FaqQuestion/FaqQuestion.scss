@@ -4,11 +4,13 @@
 @use '../../styles/partials/variables' as *;
 
 .faq__header{
-    width: 100%;
-    padding: 1rem;
+    width: 90%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: $secondary-color;
-    @include box-shadow;
-    margin-bottom: 1rem;
+    border-bottom: 2px solid $inspireGrey-color;
+    margin: 0 auto;
+   
   
 }
 .faq__wrap{

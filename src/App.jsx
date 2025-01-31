@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import StreakTrackPage from './pages/StreakTrackPage/StreakTrackPage.jsx';
 import { StreakProvider } from './StreakContext/StreakContext.jsx';
 import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       <Route path='/ProfilePage' element={< ProfilePage/>}/>
      </Routes>
      </StreakProvider>
+     <Footer />
       
      
      </BrowserRouter>
