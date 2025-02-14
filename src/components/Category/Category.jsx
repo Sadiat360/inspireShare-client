@@ -16,7 +16,7 @@ function Category({category}){
 
          <div className='card__carousel'>
           <div className='card__image-frame'>
-            <img  className='card__image' src={`http://localhost:7000/images/${category.photo}`} alt="image" />
+            <img  className='card__image' src={`https://inspireshare-d06d7caff3c9.herokuapp.com/images/${category.photo}`} alt="image" />
           </div>
           <Link  className='card__link'to='/StressCategoryPage'>
              <div className='card__title-box'>

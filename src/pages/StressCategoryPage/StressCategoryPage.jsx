@@ -13,7 +13,7 @@ function StressCategoryPage(props){
         async function getPhotos() {
 
             try{
-                const response = await axios.get(' http://localhost:7000/photos/');
+                const response = await axios.get(' https://inspireshare-d06d7caff3c9.herokuapp.com/photos');
                 console.log(response.data)
                 setPhotoDetails(response.data)
     

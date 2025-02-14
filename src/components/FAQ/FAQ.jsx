@@ -10,7 +10,7 @@ function FAQ(){
 
     useEffect(() =>{
         async function getFaqQuestions() {
-            const response = await axios.get('http://localhost:7000/faq')
+            const response = await axios.get('https://inspireshare-d06d7caff3c9.herokuapp.com/faq')
             console.log('these are faq:', response.data);
             setFaqQuestions(response.data);
             

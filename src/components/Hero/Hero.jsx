@@ -24,14 +24,14 @@ function Hero({slides}){
             
 
                 <div className='hero__slide current-slide'>
-                  <img className='hero__image' src={`http://localhost:7000/images/${currentHero.photo}`} alt="image" />
+                  <img className='hero__image' src={`https://inspireshare-d06d7caff3c9.herokuapp.com/images/${currentHero.photo}`} alt="image" />
                   <div className='hero__text-box'>
                      <h1 className='hero__title'>{currentHero.title}</h1>
                      <p className='hero__sub'>{currentHero.subtitle}</p>
                   </div>
                 </div>
                 <div  className='hero__slide next-slide'> 
-                    <img  className='hero__image' src={`http://localhost:7000/images/${nextHero.photo}`} alt="image" />
+                    <img  className='hero__image' src={`https://inspireshare-d06d7caff3c9.herokuapp.com/images/${nextHero.photo}`} alt="image" />
                     <div className='hero__text-box'>
                        <h1 className='hero__title'>{nextHero.title}</h1>
                        <p className='hero__sub'>{nextHero.subtitle}</p>

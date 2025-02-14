@@ -36,7 +36,7 @@ function HomePage(){
     useEffect(()=>{
         async function getHeroSlides() {
             try{
-                const response = await axios.get('http://localhost:7000/hero');
+                const response = await axios.get('https://inspireshare-d06d7caff3c9.herokuapp.com/hero');
                 console.log('these are hero images',response.data)
                 setheroSlides(response.data)
             }catch(error){
@@ -52,7 +52,7 @@ function HomePage(){
      
     useEffect(() =>{
        async function getCategory() {
-          const response = await axios.get('http://localhost:7000/category ')
+          const response = await axios.get('https://inspireshare-d06d7caff3c9.herokuapp.com/category ')
           console.log('catregory images:', response.data)
           setCategoryImage(response.data);
    
