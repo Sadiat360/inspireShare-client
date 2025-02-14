@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import './categoryForm.scss'
+import './CategoryForm.scss'
 import axios from 'axios';
 
 
