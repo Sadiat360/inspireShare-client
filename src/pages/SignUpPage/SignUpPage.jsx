@@ -126,7 +126,7 @@ function SignUpPage(){
                 
                    <button className="signUp__btn">Create  account</button>
                   <u className="signUp__list">
-                  <p>Already have an account?</p><Link to='/login'><span>Log In</span></Link>
+                  <p>Already have an account?</p><Link className="signUp__acct" to='/login'><span>Log In</span></Link>
                  </u> 
                </form>
             </div>

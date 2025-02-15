@@ -111,7 +111,7 @@ function LoginPage(){
                     </div>
                     <button className="logIn__btn">LogIn</button>
                     <u className="logIn__list">
-                     <p>Don't have an account?</p><Link to='/'><span>Create an account</span></Link>
+                     <p>Don't have an account?</p><Link  className="signUp__acct"to='/'><span>Create an account</span></Link>
                     </u> 
                 </form>
             </div>

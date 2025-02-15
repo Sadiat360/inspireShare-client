@@ -11,15 +11,18 @@ import StreakTrackPage from './pages/StreakTrackPage/StreakTrackPage.jsx';
 import { StreakProvider } from './StreakContext/StreakContext.jsx';
 import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import SignUpHeader from './components/SignUpHeader/SignUpHeader.jsx';
+import { useLocation } from 'react-router-dom';
 
-function App() {
 
+function Layout() {
+ const location = useLocation();
+ const isSignUpOrHome = location.pathname === '/' || location.pathname === '/login';
 
   return (
     <>
-     <BrowserRouter>
-     <StreakProvider>
-     <Header/>
+    
+      {isSignUpOrHome ? <SignUpHeader />:  <Header />}
      <Routes>
       <Route path='/' element={<SignUpPage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
@@ -30,13 +33,22 @@ function App() {
       <Route path='/StreakTrackPage' element={< StreakTrackPage/>}/>
       <Route path='/ProfilePage' element={< ProfilePage/>}/>
      </Routes>
-     </StreakProvider>
      <Footer />
       
      
-     </BrowserRouter>
+     
     </>
   )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <StreakProvider>
+        <Layout /> {/* Now useLocation() is inside BrowserRouter */}
+      </StreakProvider>
+    </BrowserRouter>
+  );
 }
 
 export default App

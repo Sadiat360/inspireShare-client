@@ -6,24 +6,25 @@
 .logIn{
     width: 100%;
     padding: 1rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
 
     @include tablet{
         padding-left: 2rem;
         padding-right: 2rem;
     }
     &__container{
-        width: 90%;
+        width: 100%;
         background-color: $secondary-color;
         position: relative;
         left: -100%;
         opacity: 0;
+        margin: 0 auto;
         animation: slideIn 1s ease-out forwards;
         @include box-shadow;
         @include tablet{
             @include flex-center(row);
             width: 70%;
-            margin: 0 auto;
+           
           
         }
        
@@ -53,6 +54,7 @@
         padding: 1rem;
     }
     &__form{
+        // height: 400px;
         background-color: $secondary-color;
         @include box-shadow;
         width: 90%;
@@ -60,6 +62,7 @@
         margin-top: 2rem;
         margin-bottom: 2rem;
         padding: 1rem;
+        padding-bottom: 2rem;
 
         @include tablet{
             width: 40%;
