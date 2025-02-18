@@ -8,7 +8,7 @@ import playVector from '../../assets/images/playVector.png'
 import MailIcon from "../../svgs/MailIcon/MailIcon";
 import clickOne from '../../assets/icons/click1.png'
 import { useStreak } from "../../StreakContext/StreakContext";
-import circleData from '../../assets/images/circle.png'
+
 
 
 

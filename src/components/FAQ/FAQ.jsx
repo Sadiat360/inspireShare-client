@@ -1,4 +1,3 @@
-import couchData from '../../assets/images/couch.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import FaqQuestion from '../FaqQuestion/FaqQuestion';

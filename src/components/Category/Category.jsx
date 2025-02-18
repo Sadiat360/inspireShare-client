@@ -1,10 +1,5 @@
 import './Category.scss';
-import embraceData from '../../assets/images/embrace.png'
-import heartData from '../../assets/images/heart.png'
-import thinkData from '../../assets/images/think.png'
 import { Link } from 'react-router-dom';
-import { useState,useEffect } from 'react';
-
 
 
 function Category({category}){
