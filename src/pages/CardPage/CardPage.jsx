@@ -5,9 +5,10 @@ import html2canvas from 'html2canvas';
 import muiscBar from '../../assets/images/musicBar.png'
 import './CardPage.scss'
 import playVector from '../../assets/images/playVector.png'
-import MailIcon from "../../svgs/MailIcon/MailIcon";
 import clickOne from '../../assets/icons/click1.png'
 import { useStreak } from "../../StreakContext/StreakContext";
+import QuoteSvg1 from "../../svgs/QuoteSvg1/QuoteSvg1";
+import QuoteSvg2 from "../../svgs/QuoteSvg2/QuoteSvg2";
 
 
 
@@ -81,8 +82,9 @@ function CardPage(){
               </div>
               <div className="card__quote">
                   <ul className="card__quote-wrap">
-                     <MailIcon/>
+                     <QuoteSvg1/>
                      <p className="card__quote-text">{quote}</p>
+                     <QuoteSvg2/>
                   </ul>
                   
               </div>

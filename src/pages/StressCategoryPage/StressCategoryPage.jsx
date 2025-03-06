@@ -34,7 +34,7 @@ function StressCategoryPage(props){
          })}
           <div className='category'>
             <p className='category__start'>Lets start curating with Kindness</p>
-           <Link to='/CategoryForm'><button className='category__btn'>Start</button></Link> 
+           <Link to='/CategoryForm' className='category__link'><button className='category__btn'>Start</button></Link> 
           </div>
         
         

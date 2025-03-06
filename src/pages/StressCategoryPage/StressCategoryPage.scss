@@ -39,13 +39,15 @@
 
         @include tablet{
             width: 45%;
-            height: 0;
-            margin-top: 0;
+            height: 300px;
         }
        
     }
     &__image{
         width: 100%;
+        @include tablet{
+            height: 100%;
+        }
     }
     &__title{
         color: $inspireBlack-color;
@@ -68,19 +70,25 @@
     }
 }
 .category{
+    width: 100%;
     padding: 1rem;
-    @include flex-center(row);
+    @include flex-center(column);
     justify-content: space-between;
     @include tablet{
        width: 80%;
+       @include flex-center(row);
        margin: 0 auto;
     }
    &__btn{
-    width: 10rem;
+    width: 90%;
     padding: 10px 15px 10px 15px;
     background-color: $secondary-color;
     border: 2px solid $primary-color;
     border-radius: 15px;
+
+    @include tablet{
+        width: 10rem;
+    }
 
     &:hover{
         background-color: $primary-color;
@@ -89,9 +97,14 @@
    }
    &__start{
     @include body-font-mob;
-
+    text-align: center;
+    margin-bottom: 1rem;
     @include tablet{
         @include body-font-tab;
+        margin-bottom: 0;
     }
+   }
+   &__link{
+    color: $inspireBlack-color;
    }
 }

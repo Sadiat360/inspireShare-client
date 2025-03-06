@@ -20,8 +20,6 @@ function Category({category}){
           </Link>
         
          </div>
-         
-         {/* https://inspireshare-d06d7caff3c9.herokuapp.com/ */}https://localhost:7000
         </>
        
     )
