@@ -72,7 +72,7 @@ function categoryForm() {
     };
     useEffect(()=>{
         async function getStressQuote() {
-            const response = await axios.get('http://localhost:7000/stressQuote');
+            const response = await axios.get('https://inspireshare-d06d7caff3c9.herokuapp.com/stressQuote');
             console.log('This is stress quote:', response.data)
             setStressQuote( response.data)
             
