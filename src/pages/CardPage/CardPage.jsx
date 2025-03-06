@@ -39,8 +39,6 @@ function CardPage(){
         )
     }
 
-
-
     const {image, musicLink, quote} = formData;
     const handleDownloadPDF = () => {
         incrementStreak();
@@ -87,7 +85,6 @@ function CardPage(){
                      <p className="card__quote-text">{quote}</p>
                   </ul>
                   
-  
               </div>
               <div className="card__musicLink">
                  <div className="card__musicLink-frame">
@@ -116,9 +113,6 @@ function CardPage(){
            
         </section>
       
-
-
-        
         </>
     )
 }

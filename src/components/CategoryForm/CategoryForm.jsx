@@ -82,8 +82,6 @@ function categoryForm() {
     
     }, []);
 
-   
-
     return(
 
         <section className="curate">
@@ -121,9 +119,6 @@ function categoryForm() {
                           onChange={handleMusicLinkChange}
                    />
                    {error && <p style={{color:'red'}}>{error}</p>}
-                   {/* <a href="https://youtube.com"><YouTubeIcon/></a> */}
-                   {/* {formData.musicLink && !error && <YouTubeMusicEmbed videoUrl={formData.musicLink} />} */}
-
                    
                </div>
              
