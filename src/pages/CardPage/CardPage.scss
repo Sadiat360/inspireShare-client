@@ -9,12 +9,10 @@
     padding: 1rem;
 
     &__container{
-        // width: 90%;
         padding: 2rem;
         background-color: $secondary-color;
         @include box-shadow;
         margin: 0 auto;
-        // margin-bottom: 2.5rem;
         margin-top: 2rem;
        
 
@@ -128,6 +126,7 @@
         border: 2px solid $primary-color;
         border-radius: 15px;
         background-color: $secondary-color;
+        color: $inspireBlack-color;
         @include box-shadow;
         &:hover{
             background-color: $primary-color;
