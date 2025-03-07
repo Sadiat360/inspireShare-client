@@ -77,24 +77,17 @@
   }
 
  .react-multi-carousel-list{
-    width: 90%;
-    margin-top: 2rem;
-    @include tablet{
-        width: 80%;
-
-    }
-    // padding-bottom: 5rem;
-    // padding-left: 2rem;
-    // padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
    
 
  }
  .react-multi-carousel-item{
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
     @include tablet{
         width: 350px;
-        // margin-left: 1rem; /// i might remove this
+        margin-left: 1rem;
     }
  }
  .carousel{
