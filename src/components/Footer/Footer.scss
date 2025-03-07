@@ -9,12 +9,13 @@
     width: 100%;
     padding: 1rem;
     position: relative;
+    margin-top: 5rem;
    
     @include tablet{
         padding-left: 2rem;
         padding-right: 2rem;
         height: 15rem;
-        margin-top: 20rem;
+       
     }
    
 
