@@ -15,6 +15,9 @@
        @include flex-center(row);
        transition: transform 1s ease-in-out;
       
+      @include tablet{
+            height: 100vh;
+        }
     }
     &__slide {
         width: 100%;
@@ -33,7 +36,7 @@
 
     }
     &__text-box{
-        width: 70%;
+        // width: 70%;
         position: absolute;
         top: 4.688rem;
         left: 20px;
@@ -90,5 +93,10 @@
  .carousel{
     &__heading{
         text-align: center;
+        @include heading-font-mob;
+
+        @include tablet{
+            @include heading-font-tab;
+        }
     }
  }
