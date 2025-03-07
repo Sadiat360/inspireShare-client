@@ -10,6 +10,7 @@
 
     &__container{
         padding: 2rem;
+        height: 700px;
         background-color: $secondary-color;
         @include box-shadow;
         margin: 0 auto;
@@ -17,6 +18,7 @@
 
         @include tablet{
             width: 80%;
+            height: auto;
             margin-bottom: 0;
            
         }
