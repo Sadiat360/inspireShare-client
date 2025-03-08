@@ -9,13 +9,13 @@ function Category({category}){
     return(
         <>
 
-         <div className='card__carousel'>
-          <div className='card__image-frame'>
-            <img  className='card__image' src={`https://inspireshare-d06d7caff3c9.herokuapp.com/images/${category.photo}`} alt="image" />
+         <div className='carousel__frame'>
+          <div className='carousel__image-frame'>
+            <img  className='carousel__image' src={`https://inspireshare-d06d7caff3c9.herokuapp.com/images/${category.photo}`} alt="image" />
           </div> 
-          <Link  className='card__link'to='/StressCategoryPage'>
-             <div className='card__title-box'>
-               <p className='card__title'>{category.title}</p>
+          <Link  className='carousel__link'to='/StressCategoryPage'>
+             <div className='carousel__title-box'>
+               <p className='carousel__title'>{category.title}</p>
              </div>
           </Link>
         
