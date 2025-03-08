@@ -99,7 +99,7 @@ function CardPage(){
                   </div>
                  <div className="card__linkBox">
 
-                    <p className="card__plug">Plug your earphones in and listen</p> 
+                    <p className="card__plug">Plug your earphones in and click the link below</p> 
                     <img className="card__icon" src={clickOne} alt="icon" />
                  </div>
                   

@@ -101,7 +101,7 @@ function categoryForm() {
                           type="file"
                           onChange={handleFileChange} 
                           accept='image/*'
-                          style={{display: 'block', marginBottom:'10px'}}
+                          style={{display: 'block', marginBottom:'10px', color: 'black'}}
                      />
                      {preview && (
                        <img src={preview} 
