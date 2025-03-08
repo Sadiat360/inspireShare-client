@@ -95,7 +95,6 @@
     padding-top: 5rem;
    
     @include tablet{
-        height: 100vh;
         padding-top: 10rem;
         @include body-padding-tab;
     }

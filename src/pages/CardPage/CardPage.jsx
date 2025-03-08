@@ -73,7 +73,9 @@ function CardPage(){
     return(
         <>
         <section className="card">
-      
+           
+           <div className="card__wrap">
+
            <div className="card__container">
               <p className="card__caption">Virtual card just for you</p>
               
@@ -112,6 +114,9 @@ function CardPage(){
               <button  className="card__btn" onClick={handleDownloadPDF}>Download</button>
             </div>
 
+
+           </div>
+          
            
         </section>
       

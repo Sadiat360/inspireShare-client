@@ -8,16 +8,24 @@
     width: 100%;
     padding: 1rem;
 
+    &__wrap{
+        margin: 0 auto;
+        margin-top: 2rem;
+        @include tablet{
+            width: 80%; 
+        }
+    }
+
     &__container{
         padding: 2rem;
         // height: 700px;
         background-color: $secondary-color;
         @include box-shadow;
-        margin: 0 auto;
-        margin-top: 2rem;
+        // margin: 0 auto;
+        // margin-top: 2rem;
 
         @include tablet{
-            width: 80%;
+            width: 100%;
             height: auto;
             margin-bottom: 0;
            
@@ -91,13 +99,13 @@
         }
     }
     &__linkBox{
-        width: 70%;
+        // width: 70%;
         @include flex-center(row);
         justify-content: space-between;
         align-items: center;
 
         @include tablet{
-            width: 50%;
+            width: 70%;
         }
     }
     
@@ -111,7 +119,7 @@
     }
     &__btn-box{
         // width: 90%;
-        height: 100px;
+        height: 80px;
         @include flex-center(column);
         justify-content: space-between;
         margin: 0 auto;
@@ -181,9 +189,6 @@
 }
 .card__icon{
     border: $primary-color;
-    width: 35px;
+    width: 30px;
     height: 10%;
-    @include tablet{
-        width: 30px;
-    }
 }
