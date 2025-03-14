@@ -47,7 +47,13 @@ function CardPage(){
         
         const element = document.querySelector('.card__container');
 
-        html2canvas(element,{ scale: 2}).then((canvas) =>{
+        html2canvas(element,{ 
+            scale: 2,
+            useCORS: true,
+            width:element.scrollWidth,
+            height:element.scrollHeight
+                               
+        }).then((canvas) =>{
             const pdf = new jsPDF('p', 'mm', 'a4');
 
             const imgData = canvas.toDataURL('image/png');
@@ -60,7 +66,7 @@ function CardPage(){
             const musicLink = formData?.musicLink;
 
             if (musicLink) {
-                pdf.textWithLink('Click to listen to the music', 10, imgHeight + 10, {
+                pdf.textWithLink('Click here to listen to the music', 10, imgHeight + 10, {
                     url: musicLink,
                 });
             }
