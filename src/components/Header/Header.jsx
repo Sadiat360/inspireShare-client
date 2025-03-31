@@ -25,7 +25,7 @@ function Header(){
        <header className='header'>
          <div className='header__box'>
            <Link to='/HomePage'><img className='header__logo' src={logoData} alt="logo" /></Link> 
-            <p className='header__logo-text'>InspireShare</p>
+           <Link to='/HomePage'><p className='header__logo-text'>InspireShare</p></Link>
          </div>
          <nav className='header__nav'>
             <ul className='header__list'>
